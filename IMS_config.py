@@ -24,6 +24,28 @@ whether = {
     '1580':"Extremely hot ",
     '1590':"Extremely cold"
 }
+channel = {
+    'BP':"BP",
+    'DiffR':"disporsed Radiation",
+    'Grad':"Global Radiation",
+    'NIP':"NIP",
+    'Rain':"Rain in mm",
+    'Rh':"Range of Humidity",
+    'STDwd':"STD of Wind Direction",
+    'TD':"Temperature Degree",
+    'TDmax':"Temperature Degree Max",
+    'TDmin':"Temperature Degree Min",
+    'TG':"Temperature Degree by Ground",
+    'Time':"Time hhmm",
+    'WD':"Wind Direction",
+    'WDmax':"Wind Direction Max",
+    'WS':"Wind Speed",
+    'Ws10mm':"Ws10mm",
+    'WS1mm':"WS1mm",
+    'WSmax':"WSmax"
+}
+
+API_TOKEN = "f058958a-d8bd-47cc-95d7-7ecf98610e47"
 current_forcast_site = "https://ims.gov.il/he/now_analysis"
 #lid 73
 zone_ariel = "73"
