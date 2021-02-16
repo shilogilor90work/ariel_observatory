@@ -1,19 +1,19 @@
 import mysql.connector
 
-# mydb = mysql.connector.connect(
-#   host="localhost",
-#   user="root",
-#   password="shilo",
-#   database="IMS"
-# )
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="root",
+  password="shilo",
+  database="IMS"
+)
 
 
 # to crate a DB
-mydb = mysql.connector.connect(
- host="localhost",
- user="root",
- password="shilo",
-)
+# mydb = mysql.connector.connect(
+#  host="localhost",
+#  user="root",
+#  password="shilo",
+# )
 
 #to crate a table in the DB
 mycursor = mydb.cursor()
