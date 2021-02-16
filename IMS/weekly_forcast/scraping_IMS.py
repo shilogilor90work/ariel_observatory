@@ -10,15 +10,9 @@ data= json.loads(response.text.encode('utf8'))
 print(data)
 # parse data
 current_data = {}
-for day in data['data']:
-    print("#######################")
-    print(day)
-    for hour in day:
-        print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
-        print(hour)
-        for specific_time in hour:
-            print("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&7")
-            print(specific_time)
+for day in list(data['data'].values()):
+    for hour in list(day.values()):
+        for specific_time in list(hour.values()):
             current_data[str(specific_time["forecast_time"])] = {"forecast_time": str(specific_time["forecast_time"]), "weather_code": str(specific_time["weather_code"]), "temperature": str(specific_time["temperature"]), "weather": ""}
             try:
                 current_data[str(specific_time["forecast_time"])]["weather"] = whether[str(specific_time["weather_code"])]
