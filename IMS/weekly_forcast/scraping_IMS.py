@@ -14,8 +14,8 @@ for day in data['data']:
     print("#######################")
     print(day)
     for hour in day:
-            print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
-            print(hour)
+        print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
+        print(hour)
         for specific_time in hour:
             print("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&7")
             print(specific_time)
