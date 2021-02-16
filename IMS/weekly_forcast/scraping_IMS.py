@@ -34,7 +34,6 @@ mydb = mysql.connector.connect(
 
 mycursor = mydb.cursor()
 
-mycursor.execute("CREATE TABLE weekly_weather (forecast_time VARCHAR(255) , PRIMARY KEY(`forecast_time`) , weather_code VARCHAR(255) , weather VARCHAR(255) , temperature VARCHAR(255)")
 sql = "INSERT INTO weekly_weather (forecast_time, weather_code, weather, temperature) VALUES (%s, %s, %s, %s)"
 
 for single_current_data in current_data:
