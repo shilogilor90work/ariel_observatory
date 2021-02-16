@@ -12,7 +12,6 @@ response = requests.request("POST", url)
 # dump data
 data= json.loads(response.text.encode('utf8'))
 # parse data
-temp_day = [day for day in data['data']]
 current_data = {}
 for day in data['data']:
     for hour in day:
@@ -22,7 +21,7 @@ for day in data['data']:
                 current_data[specific_time[forecast_time]]["weather"] = whether[specific_time["weather_code"]]
 
 # print, will be converted to send data to DB
-print(current_data)
+# print(current_data)
 
 mydb = mysql.connector.connect(
     host="localhost",
