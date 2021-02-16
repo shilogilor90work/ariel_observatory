@@ -9,18 +9,19 @@ response = requests.post(future_forcast_site + zone_ariel)
 data= json.loads(response.text.encode('utf8'))
 print(data)
 # parse data
-current_data = {}
+current_data = []
 for day in list(data['data'].values()):
     print("#######################")
     print(day)
     for hour in list(day["hourly"].values()):
         print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
         print(hour)
-        current_data[str(hour["forecast_time"])] = {"forecast_time": str(hour["forecast_time"]), "weather_code": str(hour["weather_code"]), "temperature": str(hour["temperature"]), "weather": ""}
+        temp = {"forecast_time": str(hour["forecast_time"]), "weather_code": str(hour["weather_code"]), "temperature": str(hour["temperature"]), "weather": ""}
         try:
-            current_data[str(hour["forecast_time"])]["weather"] = whether[str(hour["weather_code"])]
+            temp = whether[str(hour["weather_code"])]
         except:
             print("error parsing weather code")
+        current_data.append(temp)
 
 # print, will be converted to send data to DB
 print(current_data)
