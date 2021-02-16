@@ -3,12 +3,8 @@ import json
 import requests
 import mysql.connector
 
-# URL
-url = requests.post(future_forcast_site + zone_ariel)
-
-
 # request
-response = requests.request("POST", url)
+response = requests.post(future_forcast_site + zone_ariel)
 # dump data
 data= json.loads(response.text.encode('utf8'))
 # parse data
