@@ -15,7 +15,8 @@ mydb = mysql.connector.connect(
  password="shilo",
 )
 mycursor = mydb.cursor()
-mycursor.execute("CREATE DATABASE IMS")
+try:
+    mycursor.execute("CREATE DATABASE IMS")
 
 #to crate a table in the DB
 mycursor = mydb.cursor()
