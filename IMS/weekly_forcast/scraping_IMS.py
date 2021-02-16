@@ -18,7 +18,7 @@ for day in list(data['data'].values()):
         print(hour)
         temp = {"forecast_time": str(hour["forecast_time"]), "weather_code": str(hour["weather_code"]), "temperature": str(hour["temperature"]), "weather": ""}
         try:
-            temp = whether[str(hour["weather_code"])]
+            temp["weather"] = whether[str(hour["weather_code"])]
         except:
             print("error parsing weather code")
         current_data.append(temp)
