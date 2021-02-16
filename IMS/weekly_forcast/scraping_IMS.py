@@ -27,7 +27,7 @@ mydb = mysql.connector.connect(
 
 mycursor = mydb.cursor()
 
-sql = "INSERT INTO weekly_weather (forecast_time, weather_code, weather, temperature) VALUES (%s, %s, %s, %s)"
+sql = "REPLACE INTO weekly_weather (forecast_time, weather_code, weather, temperature) VALUES (%s, %s, %s, %s)"
 
 for single_current_data in current_data:
     val = (str(single_current_data['forecast_time']), str(single_current_data['weather_code']), str(single_current_data['weather']), str(single_current_data['temperature']))
