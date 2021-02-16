@@ -25,10 +25,10 @@ for day in data['data']:
 print(current_data)
 
 mydb = mysql.connector.connect(
-  host="localhost",
-  user="root",
-  password="shilo",
-  database="IMS"
+    host="localhost",
+    user="root",
+    password="shilo",
+    database="IMS"
 )
 
 mycursor = mydb.cursor()
