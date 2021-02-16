@@ -19,6 +19,8 @@ for day in data['data']:
             current_data[specific_time[forecast_time]] = {"forecast_time": specific_time["forecast_time"], "weather_code": specific_time["weather_code"], "temperature": specific_time["temperature"], "weather": ""}
             try:
                 current_data[specific_time[forecast_time]]["weather"] = whether[specific_time["weather_code"]]
+            except:
+                print("error parsing weather code")
 
 # print, will be converted to send data to DB
 print(current_data)
