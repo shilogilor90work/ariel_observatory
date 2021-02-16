@@ -12,9 +12,9 @@ current_data = {}
 for day in data['data']:
     for hour in day:
         for specific_time in hour:
-            current_data[specific_time[forecast_time]] = {"forecast_time": specific_time["forecast_time"], "weather_code": specific_time["weather_code"], "temperature": specific_time["temperature"], "weather": ""}
+            current_data[str(specific_time[forecast_time])] = {"forecast_time": str(specific_time["forecast_time"]), "weather_code": str(specific_time["weather_code"]), "temperature": str(specific_time["temperature"]), "weather": ""}
             try:
-                current_data[specific_time[forecast_time]]["weather"] = whether[specific_time["weather_code"]]
+                current_data[str(specific_time[forecast_time)]]["weather"] = whether[str(specific_time["weather_code"])]
             except:
                 print("error parsing weather code")
 
