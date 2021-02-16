@@ -1,4 +1,4 @@
-from IMS_weekly_config import current_forcast_site, zone_ariel, future_forcast_site
+from IMS_weekly_config import current_forcast_site, zone_ariel, future_forcast_site, whether
 import json
 import requests
 import mysql.connector
@@ -21,7 +21,7 @@ for day in data['data']:
                 current_data[specific_time[forecast_time]]["weather"] = whether[specific_time["weather_code"]]
 
 # print, will be converted to send data to DB
-# print(current_data)
+print(current_data)
 
 mydb = mysql.connector.connect(
     host="localhost",
