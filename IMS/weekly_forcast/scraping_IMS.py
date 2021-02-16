@@ -16,14 +16,11 @@ for day in list(data['data'].values()):
     for hour in list(day["hourly"].values()):
         print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
         print(hour)
-        for specific_time in hour:
-            print("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&7")
-            print(specific_time)
-            current_data[str(specific_time["forecast_time"])] = {"forecast_time": str(specific_time["forecast_time"]), "weather_code": str(specific_time["weather_code"]), "temperature": str(specific_time["temperature"]), "weather": ""}
-            try:
-                current_data[str(specific_time["forecast_time"])]["weather"] = whether[str(specific_time["weather_code"])]
-            except:
-                print("error parsing weather code")
+        current_data[str(hour["forecast_time"])] = {"forecast_time": str(hour["forecast_time"]), "weather_code": str(hour["weather_code"]), "temperature": str(hour["temperature"]), "weather": ""}
+        try:
+            current_data[str(hour["forecast_time"])]["weather"] = whether[str(hour["weather_code"])]
+        except:
+            print("error parsing weather code")
 
 # print, will be converted to send data to DB
 print(current_data)
