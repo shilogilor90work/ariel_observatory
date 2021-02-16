@@ -12,7 +12,6 @@ response = requests.request("POST", url)
 # dump data
 data= json.loads(response.text.encode('utf8'))
 # parse data
-current_data = data['data'][0]['channels']
 temp_day = [day for day in data['data']]
 current_data = {}
 for day in data['data']:
