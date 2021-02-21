@@ -15,7 +15,7 @@ mydb = mysql.connector.connect(
 )
 mycursor = mydb.cursor()
 for table, column in table_names.items():
-    str = "delete from " + table + " where STRCMP(" + date_N_days_ago.strftime('%Y-%m-%d') + ", " + column + ") = 1"
+    str = "delete from " + table + " where " + date_N_days_ago.strftime('%Y-%m-%d') + " > " + column
     mycursor.execute(str
         # """
         #     delete
