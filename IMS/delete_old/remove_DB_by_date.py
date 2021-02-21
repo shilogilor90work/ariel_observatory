@@ -15,7 +15,7 @@ mydb = mysql.connector.connect(
 )
 mycursor = mydb.cursor()
 for table, column in table_names.items():
-    cursor.execute(
+    mycursor.execute(
         """
             delete *
             from %s
