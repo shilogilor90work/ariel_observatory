@@ -1,0 +1,26 @@
+from remove_config import DAYS_COUNT_BACK, table_names
+import mysql.connector
+from datetime import datetime, timedelta
+
+N = DAYS_COUNT_BACK
+
+date_N_days_ago = datetime.now() - timedelta(days=N)
+
+
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="root",
+  password="shilo",
+  database="IMS"
+)
+mycursor = mydb.cursor()
+for table, column in table_names.items():
+    cursor.execute(
+        """
+            delete *
+            from %s
+            where %s < %s
+        """,
+        (table, column, date_N_days_ago.strftime('%Y-%m-%d'))
+    )
+mydb.commit()
