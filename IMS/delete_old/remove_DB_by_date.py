@@ -15,12 +15,13 @@ mydb = mysql.connector.connect(
 )
 mycursor = mydb.cursor()
 for table, column in table_names.items():
-    mycursor.execute(
-        """
-            delete
-            from %s p1
-            where STRCMP(%s, p1.%s) == 1
-        """,
-        (table, date_N_days_ago.strftime('%Y-%m-%d'), column,)
+    str = "delete from " + table + " where STRCMP(" + date_N_days_ago.strftime('%Y-%m-%d') + ", " + column + ") == 1"
+    mycursor.execute(str
+        # """
+        #     delete
+        #     from %s p1
+        #     where STRCMP(%s, p1.%s) == 1
+        # """,
+        # (table, date_N_days_ago.strftime('%Y-%m-%d'), column,)
     )
 mydb.commit()
