@@ -17,10 +17,10 @@ mycursor = mydb.cursor()
 for table, column in table_names.items():
     mycursor.execute(
         """
-            delete *
+            delete
             from %s
             where %s < %s
         """,
-        (table, column, date_N_days_ago.strftime('%Y-%m-%d'))
+        (table, column, date_N_days_ago.strftime('%Y-%m-%d'),)
     )
 mydb.commit()
