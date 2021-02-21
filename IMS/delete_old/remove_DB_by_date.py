@@ -1,10 +1,10 @@
 from remove_config import DAYS_COUNT_BACK, table_names
 import mysql.connector
-from datetime import datetime, timedelta
+# from datetime import datetime, timedelta
 
-N = DAYS_COUNT_BACK
+# N = DAYS_COUNT_BACK
 
-date_N_days_ago = datetime.now() - timedelta(days=N)
+# date_N_days_ago = datetime.now() - timedelta(days=N)
 
 
 mydb = mysql.connector.connect(
@@ -15,7 +15,8 @@ mydb = mysql.connector.connect(
 )
 mycursor = mydb.cursor()
 for table, column in table_names.items():
-    str = "delete from " + table + " where " + date_N_days_ago.strftime('%Y-%m-%d') + " > " + column
+    str = "delete from " + table + " where STR_TO_DATE(" + column + ", '%m/%d/%Y') > CURDATE() - INTERVAL "+ DAYS_COUNT_BACK + " DAY"
+    # + date_N_days_ago.strftime('%Y-%m-%d') + " > " + column
     mycursor.execute(str
         # """
         #     delete
