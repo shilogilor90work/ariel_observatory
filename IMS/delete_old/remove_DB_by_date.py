@@ -19,8 +19,8 @@ for table, column in table_names.items():
         """
             delete
             from %s
-            where %s < %s
+            where STRCMP(%s, %s) == 1
         """,
-        (table, column, date_N_days_ago.strftime('%Y-%m-%d'),)
+        (table, date_N_days_ago.strftime('%Y-%m-%d'), column,)
     )
 mydb.commit()
