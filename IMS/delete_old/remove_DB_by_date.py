@@ -18,8 +18,8 @@ for table, column in table_names.items():
     mycursor.execute(
         """
             delete
-            from %s
-            where STRCMP(%s, %s) == 1
+            from %s p1
+            where STRCMP(%s, p1.%s) == 1
         """,
         (table, date_N_days_ago.strftime('%Y-%m-%d'), column,)
     )
