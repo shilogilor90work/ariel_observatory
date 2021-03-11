@@ -45,7 +45,7 @@ class Current_Weather(models.Model):
     WD = models.CharField(max_length=64, help_text=HELP_CODE)
     STDwd = models.CharField(max_length=64, help_text=HELP_CODE)
     TD = models.CharField(max_length=64, help_text=HELP_CODE)
-    Tw = models.CharField(max_length=64, help_text=HELP_CODE)
+    TW = models.CharField(max_length=64, help_text=HELP_CODE)
     TDmax = models.CharField(max_length=64, help_text=HELP_CODE)
     TDmin = models.CharField(max_length=64, help_text=HELP_CODE)
     WS1mm = models.CharField(max_length=64, help_text=HELP_CODE)
