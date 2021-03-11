@@ -12,15 +12,15 @@
 hi there
 
     {% for data in weekly %}
-        <h1>{{ weekly.forecast_time }}  -- {{ weekly.weather_code }}  -- {{ weekly.temperature }}  -- {{ weekly.weather }}</h1> <br>
+        <h1>{{ data.forecast_time }}  -- {{ data.weather_code }}  -- {{ data.temperature }}  -- {{ data.weather }}</h1> <br>
     {% endfor %}
     <br><br><br><br>
 
     {% for data in current_weather %}
-        <h1>{{ weekly.current_time }}  -- {{ weekly.rain }}  -- {{ weekly.WSmax }}  -- {{ weekly.Wdmax }} --
-        {{ weekly.WS }}  -- {{ weekly.Wd }}  -- {{ weekly.STDwd }}  -- {{ weekly.TD }} --
-      {{ weekly.TW }}  -- {{ weekly.TDmax }}  -- {{ weekly.TDmin }}  -- {{ weekly.WS1mm }} --
-    {{ weekly.WS10mm }}  -- {{ weekly.time }}  -- {{ weekly.TG }}  -- {{ weekly.RH }}</h1> <br>
+        <h1>{{ data.current_time }}  -- {{ data.rain }}  -- {{ data.WSmax }}  -- {{ data.Wdmax }} --
+        {{ data.WS }}  -- {{ data.Wd }}  -- {{ data.STDwd }}  -- {{ data.TD }} --
+      {{ data.TW }}  -- {{ data.TDmax }}  -- {{ data.TDmin }}  -- {{ data.WS1mm }} --
+    {{ data.WS10mm }}  -- {{ data.time }}  -- {{ data.TG }}  -- {{ data.RH }}</h1> <br>
     {% endfor %}
 
 {% endblock %}
