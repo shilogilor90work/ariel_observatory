@@ -7,8 +7,6 @@ xFind
 from datetime import datetime
 from django.db import models
 from django.contrib.auth.models import User
-from integrations.models import ClientDataUpdate
-from integrations.conf import INTEGRATION_CHOICES
 
 
 class Weekly(models.Model):
