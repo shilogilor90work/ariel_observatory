@@ -29,39 +29,41 @@ weekly data:
 
 <table>
     <tr>
-        <th>Field 1</th>
-        <th>Field 2</th>
-        <th>Field 3</th>
-        <th>Field 4</th>
-        <th>Field 5</th>
-        <th>Field 6</th>
-        <th>Field 7</th>
-        <th>Field 8</th>
-        <th>Field 9</th>
-        <th>Field 10</th>
-        <th>Field 11</th>
-        <th>Field 12</th>
-        <th>Field 13</th>
-        <th>Field 14</th>
-        <th>Field 15</th>
+        <th>current_time</th>
+        <th>Rain</th>
+        <th>WSmax</th>
+        <th>WDmax</th>
+        <th>WS</th>
+        <th>WD</th>
+        <th>STDwd</th>
+        <th>TD</th>
+        <th>TW</th>
+        <th>TDmax</th>
+        <th>TDmin</th>
+        <th>WS1mm</th>
+        <th>WS10mm</th>
+        <th>time</th>
+        <th>TG</th>
+        <th>RH</th>
     </tr>
     {% for data in current_weather %}
     <tr>
-        <td>{{ data.field1 }}</td>
-        <td>{{ data.field2 }}</td>
-        <td>{{ data.field3 }}</td>
-        <td>{{ data.field4 }}</td>
-        <td>{{ data.field5 }}</td>
-        <td>{{ data.field6 }}</td>
-        <td>{{ data.field7 }}</td>
-        <td>{{ data.field8 }}</td>
-        <td>{{ data.field9 }}</td>
-        <td>{{ data.field10 }}</td>
-        <td>{{ data.field11 }}</td>
-        <td>{{ data.field12 }}</td>
-        <td>{{ data.field13 }}</td>
-        <td>{{ data.field14 }}</td>
-        <td>{{ data.field15 }}</td>
+        <td>{{ data.current_time }}</td>
+        <td>{{ data.Rain }}</td>
+        <td>{{ data.WSmax }}</td>
+        <td>{{ data.WDmax }}</td>
+        <td>{{ data.WS }}</td>
+        <td>{{ data.WD }}</td>
+        <td>{{ data.STDwd }}</td>
+        <td>{{ data.TD }}</td>
+        <td>{{ data.TW }}</td>
+        <td>{{ data.TDmax }}</td>
+        <td>{{ data.TDmin }}</td>
+        <td>{{ data.WS1mm }}</td>
+        <td>{{ data.WS10mm }}</td>
+        <td>{{ data.time }}</td>
+        <td>{{ data.TG }}</td>
+        <td>{{ data.RH }}</td>
     </tr>
     {% endfor %}
 </table>
