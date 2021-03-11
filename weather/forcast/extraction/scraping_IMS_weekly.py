@@ -1,4 +1,4 @@
-from IMS_weekly_config import current_forcast_site, zone_ariel, future_forcast_site, whether
+from .IMS_weekly_config import current_forcast_site, zone_ariel, future_forcast_site, whether
 from models import Weekly
 import json
 import requests

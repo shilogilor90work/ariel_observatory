@@ -1,4 +1,4 @@
-from IMS_config import current_forcast_site, zone_ariel, future_forcast_site, API_TOKEN
+from .IMS_config import current_forcast_site, zone_ariel, future_forcast_site, API_TOKEN
 from models import Current_Weather
 import json
 from datetime import datetime
