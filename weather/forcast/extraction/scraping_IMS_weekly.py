@@ -2,7 +2,6 @@ from .IMS_weekly_config import current_forcast_site, zone_ariel, future_forcast_
 from forcast.models import Weekly
 import json
 import requests
-import mysql.connector
 
 def scrape_IMS_weekly():
     # request
