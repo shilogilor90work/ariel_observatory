@@ -13,7 +13,7 @@ def scrape_IMS_weekly():
     current_data = []
     for day in list(data['data'].values()):
         for hour in list(day["hourly"].values()):
-            temp = {"forecast_time": str(hour["forecast_time"]), "weather_code": str(hour["weather_code"]), "temperature": str(hour["temperature"]), "weather": ""}
+            temp = {"forcast_time": str(hour["forecast_time"]), "weather_code": str(hour["weather_code"]), "temperature": str(hour["temperature"]), "weather": ""}
             try:
                 temp["weather"] = whether[str(hour["weather_code"])]
             except:
