@@ -56,7 +56,7 @@ class Current_Weather(models.Model):
 
 
     def __str__(self):
-        return f"{self.current_time} -- {self.rain} -- {self.WSmax} -- {self.WDmax} -- \
+        return f"{self.current_time} -- {self.Rain} -- {self.WSmax} -- {self.WDmax} -- \
             {self.WS} -- {self.WD} -- {self.STDwd} -- {self.TD} -- \
-            {self.Tw} -- {self.TDmax} -- {self.TDmin} -- {self.WS1mm} -- \
+            {self.TW} -- {self.TDmax} -- {self.TDmin} -- {self.WS1mm} -- \
             {self.WS10mm} -- {self.time} -- {self.TG} -- {self.RH}"
