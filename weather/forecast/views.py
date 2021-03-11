@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from forcast.models import Weekly, Current_Weather
+from forecast.models import Weekly, Current_Weather
 
 # Create your views here.
 def status_view(request):
@@ -13,7 +13,7 @@ def status_view(request):
         Response -- Response object.
     """
 
-    weekly = Weekly.objects.all().order_by('-forcast_time')
+    weekly = Weekly.objects.all().order_by('-forecast_time')
     current_weather = Current_Weather.objects.all().order_by('-current_time')
 
     context = {"weekly": weekly, "current_weather": current_weather}

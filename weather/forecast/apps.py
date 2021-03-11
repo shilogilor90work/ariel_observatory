@@ -1,8 +1,8 @@
 from django.apps import AppConfig
 
 
-class ForcastConfig(AppConfig):
-    name = 'forcast'
+class forecastConfig(AppConfig):
+    name = 'forecast'
 
     def ready(self):
         if 'runserver' not in sys.argv:

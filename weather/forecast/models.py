@@ -13,12 +13,12 @@ class Weekly(models.Model):
     """Weekly
     """
 
-    HELP_FORCAST = 'time for prediction'
+    HELP_forecast = 'time for prediction'
     HELP_CODE = 'IMS code number'
     HELP_TEMPERATURE = 'temperature'
     HELP_WEATHER = 'translating the IMS code to words'
 
-    forcast_time = models.DateTimeField(unique=True, help_text=HELP_FORCAST)
+    forecast_time = models.DateTimeField(unique=True, help_text=HELP_forecast)
 
     weather_code = models.CharField(max_length=64, help_text=HELP_CODE)
 
@@ -27,16 +27,16 @@ class Weekly(models.Model):
     weather = models.CharField(max_length=128, help_text=HELP_WEATHER)
 
     def __str__(self):
-        return f"{self.forcast_time} -- {self.weather_code} -- {self.temperature} -- {self.weather}"
+        return f"{self.forecast_time} -- {self.weather_code} -- {self.temperature} -- {self.weather}"
 
 
 class Current_Weather(models.Model):
     """Current_Weather
     """
 
-    HELP_FORCAST = 'time for prediction'
+    HELP_forecast = 'time for prediction'
     HELP_CODE = 'needs to change'
-    current_time = models.DateTimeField(unique=True, help_text=HELP_FORCAST)
+    current_time = models.DateTimeField(unique=True, help_text=HELP_forecast)
 
     Rain = models.CharField(max_length=64, help_text=HELP_CODE)
     WSmax = models.CharField(max_length=64, help_text=HELP_CODE)

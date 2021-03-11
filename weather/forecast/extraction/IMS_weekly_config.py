@@ -46,7 +46,7 @@ channel = {
 }
 
 API_TOKEN = "f058958a-d8bd-47cc-95d7-7ecf98610e47"
-current_forcast_site = "https://ims.gov.il/he/now_analysis"
+current_forecast_site = "https://ims.gov.il/he/now_analysis"
 #lid 73
 zone_ariel = "73"
-future_forcast_site = "https://ims.gov.il/he/forecast_data/"
+future_forecast_site = "https://ims.gov.il/he/forecast_data/"
