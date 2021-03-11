@@ -25,3 +25,17 @@ weekly data:
     {% endfor %}
 
 {% endblock %}
+<table>
+    <tr>
+        <th>Field 1</th>
+        ...
+        <th>Field N</th>
+    </tr>
+    {% for data in current_weather %}
+    <tr>
+        <td>{{ data.field1 }}</td>
+        ...
+        <td>{{ data.fieldN }}</td>
+    </tr>
+    {% endfor %}
+</table>
