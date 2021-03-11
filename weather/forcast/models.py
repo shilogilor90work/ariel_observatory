@@ -38,7 +38,7 @@ class Current_Weather(models.Model):
     HELP_CODE = 'needs to change'
     current_time = models.DateTimeField(unique=True, help_text=HELP_FORCAST)
 
-    rain = models.CharField(max_length=64, help_text=HELP_CODE)
+    Rain = models.CharField(max_length=64, help_text=HELP_CODE)
     WSmax = models.CharField(max_length=64, help_text=HELP_CODE)
     WDmax = models.CharField(max_length=64, help_text=HELP_CODE)
     WS = models.CharField(max_length=64, help_text=HELP_CODE)
