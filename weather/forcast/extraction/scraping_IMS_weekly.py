@@ -1,5 +1,5 @@
 from .IMS_weekly_config import current_forcast_site, zone_ariel, future_forcast_site, whether
-from models import Weekly
+from forcast.models import Weekly
 import json
 import requests
 import mysql.connector
