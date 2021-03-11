@@ -1,0 +1,11 @@
+ssh -i .pem ec2-user@address
+
+yum install -y python3
+
+sudo pip3 install Django==2.1.*
+
+sudo yum install git-all
+
+git clone https://github.com/shilogilor90work/ariel_observatory.git
+
+# sudo pip3 install MODULE
