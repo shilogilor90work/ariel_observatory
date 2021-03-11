@@ -10,6 +10,8 @@ git clone https://github.com/shilogilor90work/ariel_observatory.git
 
 # sudo pip3 install MODULE
 
+sudo pip3 install requests
+
 python3 manage.py makemigrations
 
 python3 manage.py migrate

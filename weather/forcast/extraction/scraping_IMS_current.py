@@ -26,11 +26,11 @@ def scrape_IMS_current():
 
     current_item = Current_Weather.objects.filter(current_time=current_time)
     if current_item.exists():
-        current_item.update(Rain=str(name_value['Rain']), WSmax=str(name_value['WSmax']), WDmax=str(name_value['WDmax']), WS=str(name_value['WS']),
+        current_item.objects.update(Rain=str(name_value['Rain']), WSmax=str(name_value['WSmax']), WDmax=str(name_value['WDmax']), WS=str(name_value['WS']),
         WD=str(name_value['WD']), STDwd=str(name_value['STDwd']), TD=str(name_value['TD']), TW=str(name_value['TW']), TDmax=str(name_value['TDmax']),
         TDmin=str(name_value['TDmin']), WS1mm=str(name_value['WS1mm']), WS10mm=str(name_value['Ws10mm']), time=str(name_value['Time']), TG=str(name_value['TG']), RH=str(name_value['RH']))
     else:
-        Current_Weather.create(current_time=current_time, Rain=str(name_value['Rain']), WSmax=str(name_value['WSmax']), WDmax=str(name_value['WDmax']), WS=str(name_value['WS']),
+        Current_Weather.objects.create(current_time=current_time, Rain=str(name_value['Rain']), WSmax=str(name_value['WSmax']), WDmax=str(name_value['WDmax']), WS=str(name_value['WS']),
         WD=str(name_value['WD']), STDwd=str(name_value['STDwd']), TD=str(name_value['TD']), TW=str(name_value['TW']), TDmax=str(name_value['TDmax']),
         TDmin=str(name_value['TDmin']), WS1mm=str(name_value['WS1mm']), WS10mm=str(name_value['Ws10mm']), time=str(name_value['Time']), TG=str(name_value['TG']), RH=str(name_value['RH']))
     print(name_value)
