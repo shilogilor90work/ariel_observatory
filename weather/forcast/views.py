@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from models import Weekly, Current_Weather
+from .models import Weekly, Current_Weather
 
 # Create your views here.
 def status_view(request):
