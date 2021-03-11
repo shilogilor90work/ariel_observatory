@@ -1,0 +1,1 @@
+DAYS_COUNT_BACK = 3
