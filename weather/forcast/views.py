@@ -16,6 +16,5 @@ def status_view(request):
     weekly = Weekly.objects.all().order_by('-forcast_time')
     current_weather = Current_Weather.objects.all().order_by('-current_time')
 
-    return activity
     context = {"weekly": weekly, "current_weather": current_weather}
     return render(request, 'dashboard.html', context)
