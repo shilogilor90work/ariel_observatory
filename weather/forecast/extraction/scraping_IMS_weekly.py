@@ -24,6 +24,6 @@ def scrape_IMS_weekly():
         current_time = datetime.strptime(single_current_data['forecast_time'][:19], '%Y-%m-%d %H:%M:%S')
         current_item = Weekly.objects.filter(forecast_time=current_time)
         if current_item.exists():
-            current_item.objects.update(weather_code=str(single_current_data['weather_code']), weather=str(single_current_data['weather']), Temperature=str(single_current_data['temperature']))
+            current_item.objects.update(weather_code=str(single_current_data['weather_code']), weather=str(single_current_data['weather']), temperature=str(single_current_data['temperature']))
         else:
-            Weekly.objects.create(forecast_time=current_time, weather_code=str(single_current_data['weather_code']), weather=str(single_current_data['weather']), Temperature=str(single_current_data['temperature']))
+            Weekly.objects.create(forecast_time=current_time, weather_code=str(single_current_data['weather_code']), weather=str(single_current_data['weather']), temperature=str(single_current_data['temperature']))
