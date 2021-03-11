@@ -34,6 +34,8 @@ class Current_Weather(models.Model):
     """Current_Weather
     """
 
+    HELP_FORCAST = 'time for prediction'
+    HELP_CODE = 'needs to change'
     current_time = models.DateTimeField(unique=True, help_text=HELP_FORCAST)
 
     rain = models.CharField(max_length=64, help_text=HELP_CODE)
