@@ -11,18 +11,36 @@
 
 weekly data:
 <br><br>
-    {% for data in weekly %}
+    <!-- {% for data in weekly %}
         <h1>{{ data.forecast_time }}  -- {{ data.weather_code }}  -- {{ data.temperature }}  -- {{ data.weather }}</h1> <br>
+    {% endfor %} -->
+
+    <table>
+        <tr>
+            <th>forecast_time</th>
+            <th>weather_code</th>
+            <th>temperature</th>
+            <th>WDmax</th>
+            <th>weather</th>
+          </tr>
+          {% for data in weekly %}
+          <tr>
+        <td>{{ data.forecast_time }}</td>
+        <td>{{ data.weather_code }}</td>
+        <td>{{ data.temperature }}</td>
+        <td>{{ data.weather }}</td>
+    </tr>
     {% endfor %}
+</table>
     <br><br><br><br>
     current data:
-    <br><br>
+    <!-- <br><br>
     {% for data in current_weather %}
         <h1>{{ data.current_time }}  -- {{ data.Rain }}  -- {{ data.WSmax }}  -- {{ data.WDmax }} --
         {{ data.WS }}  -- {{ data.WD }}  -- {{ data.STDwd }}  -- {{ data.TD }} --
       {{ data.TW }}  -- {{ data.TDmax }}  -- {{ data.TDmin }}  -- {{ data.WS1mm }} --
     {{ data.WS10mm }}  -- {{ data.time }}  -- {{ data.TG }}  -- {{ data.RH }}</h1> <br>
-    {% endfor %}
+    {% endfor %} -->
 
 {% endblock %}
 {% block content2 %}
