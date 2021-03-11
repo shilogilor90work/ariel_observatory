@@ -9,13 +9,14 @@
 {% endblock %}
 {% block content %}
 
-hi there
-
+weekly data:
+<br><br>
     {% for data in weekly %}
         <h1>{{ data.forecast_time }}  -- {{ data.weather_code }}  -- {{ data.temperature }}  -- {{ data.weather }}</h1> <br>
     {% endfor %}
     <br><br><br><br>
-
+    current data:
+    <br><br>
     {% for data in current_weather %}
         <h1>{{ data.current_time }}  -- {{ data.rain }}  -- {{ data.WSmax }}  -- {{ data.Wdmax }} --
         {{ data.WS }}  -- {{ data.Wd }}  -- {{ data.STDwd }}  -- {{ data.TD }} --
