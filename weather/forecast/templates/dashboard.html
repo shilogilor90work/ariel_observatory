@@ -1,13 +1,14 @@
+<link rel="stylesheet" href="dashboard.css">
+<script src="dashboard.js"></script>
 
 {% block title %}Main Page{% endblock %}
-{% block head %}
 
 <style>
 
 </style>
 
-{% endblock %}
-{% block content %}
+
+<<body>
 
 weekly data:
 <br><br>
@@ -41,8 +42,7 @@ weekly data:
     {{ data.WS10mm }}  -- {{ data.time }}  -- {{ data.TG }}  -- {{ data.RH }}</h1> <br>
     {% endfor %} -->
 
-{% endblock %}
-{% block content2 %}
+
 
 <table>
     <tr>
@@ -84,4 +84,4 @@ weekly data:
     </tr>
     {% endfor %}
 </table>
-{% endblock %}
+</body>
