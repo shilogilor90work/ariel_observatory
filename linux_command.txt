@@ -18,6 +18,9 @@ python3 manage.py migrate
 
 # python3 manage.py shell
 
-
+from forecast.extraction.scraping_IMS_current import scrape_IMS_current
+scrape_IMS_current()
+from forecast.extraction.scraping_IMS_weekly import scrape_IMS_weekly
+scrape_IMS_weekly()
 
 sudo python3 manage.py runserver 0.0.0.0:80
