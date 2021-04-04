@@ -1,4 +1,5 @@
-<link rel="stylesheet" href="dashboard.css">
+{% load weather %}
+<link rel="stylesheet" href="{% weather 'dashboard.css' %}">
 <script src="dashboard.js"></script>
 
 {% block title %}Main Page{% endblock %}
