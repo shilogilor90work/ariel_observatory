@@ -1,11 +1,10 @@
-{% load static %}
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+{% extends 'base.html' %}
 <link rel="stylesheet" href="{% static 'dashboard.css' %}">
 <script src="{% static 'dashboard.js' %}"></script>
 
 <body>
 
-<h1>weekly data:</h1>
+<h2>weekly data:</h2>
 <br><br>
     <!-- {% for data in weekly %}
         <h1>{{ data.forecast_time }}  -- {{ data.weather_code }}  -- {{ data.temperature }}  -- {{ data.weather }}</h1> <br>
@@ -15,7 +14,7 @@
         <tr>
             <th>forecast_time</th>
             <th>weather_code</th>
-            <th>temperature<</th>
+            <th>temperature</th>
             <th>weather</th>
           </tr>
           {% for data in weekly.reverse %}
@@ -28,7 +27,7 @@
     {% endfor %}
 </table>
     <br><br><br><br>
-<h1>    current data:</h1>
+<h2>    current data:</h2>
     <!-- <br><br>
     {% for data in current_weather %}
         <h1>{{ data.current_time }}  -- {{ data.Rain }}  -- {{ data.WSmax }}  -- {{ data.WDmax }} --
