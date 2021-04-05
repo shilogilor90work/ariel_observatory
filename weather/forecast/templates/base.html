@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<title>Ariel Observatory</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+{% block head %}
+{% endblock %}
+</head>
+<body>
+  {% block content %}
+
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="{% static 'base.css' %}">
+  <div class="header">
+    <img src="{%static 'logo.jpeg'%}" alt="logo" class="logo"/>
+    <img src="{%static %}{{status}}.jpeg" alt="logo" class="status"/>
+  </div>
+
+{% endblock %}
+
+
+</body>
+</html>
