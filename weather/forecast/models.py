@@ -1,8 +1,4 @@
-"""
 
-Shilo Gilor.
-xFind
-"""
 
 from datetime import datetime
 from django.db import models

@@ -1,9 +1,12 @@
-{% load static %}
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<link rel="stylesheet" href="{% static 'dashboard.css' %}">
-<script src="{% static 'dashboard.js' %}"></script>
+{% extends "base.html" %}
 
-<body>
+{% block head %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" href='/static/dashboard.css'>
+<script src='/static/dashboard.js'></script>
+{% endblock head%}
+
+{% block content %}
 
 <h1>weekly data:</h1>
 <br><br>
@@ -15,7 +18,7 @@
         <tr>
             <th>forecast_time</th>
             <th>weather_code</th>
-            <th>temperature<</th>
+            <th>temperature</th>
             <th>weather</th>
           </tr>
           {% for data in weekly.reverse %}
@@ -79,4 +82,4 @@
     </tr>
     {% endfor %}
 </table>
-</body>
+{% endblock content %}

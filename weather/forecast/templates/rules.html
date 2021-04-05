@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block head %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" href='/static/dashboard.css'>
+<script src='/static/dashboard.js'></script>
+{% endblock head%}
+
+{% block content %}
+
+<h2>weekly data:</h2>
+<br><br>
+    <!-- {% for data in weekly %}
+        <h1>{{ data.forecast_time }}  -- {{ data.weather_code }}  -- {{ data.temperature }}  -- {{ data.weather }}</h1> <br>
+    {% endfor %} -->
+
+    <table>
+        <tr>
+            <th>forecast_time</th>
+            <th>weather_code</th>
+            <th>temperature</th>
+            <th>weather</th>
+          </tr>
+          {% for data in weekly.reverse %}
+          <tr>
+        <td>{{ data.forecast_time }}</td>
+        <td>{{ data.weather_code }}</td>
+        <td>{{ data.temperature }}</td>
+        <td>{{ data.weather }}</td>
+    </tr>
+    {% endfor %}
+</table>
+    <br><br><br><br>
+<h2>    current data:</h2>
+    <!-- <br><br>
+    {% for data in current_weather %}
+        <h1>{{ data.current_time }}  -- {{ data.Rain }}  -- {{ data.WSmax }}  -- {{ data.WDmax }} --
+        {{ data.WS }}  -- {{ data.WD }}  -- {{ data.STDwd }}  -- {{ data.TD }} --
+      {{ data.TW }}  -- {{ data.TDmax }}  -- {{ data.TDmin }}  -- {{ data.WS1mm }} --
+    {{ data.WS10mm }}  -- {{ data.time }}  -- {{ data.TG }}  -- {{ data.RH }}</h1> <br>
+    {% endfor %} -->
+
+
+
+<table>
+    <tr>
+        <th>current_time</th>
+        <th>Rain</th>
+        <th>WSmax</th>
+        <th>WDmax</th>
+        <th>WS</th>
+        <th>WD</th>
+        <th>STDwd</th>
+        <th>TD</th>
+        <th>TW</th>
+        <th>TDmax</th>
+        <th>TDmin</th>
+        <th>WS1mm</th>
+        <th>WS10mm</th>
+        <th>time</th>
+        <th>TG</th>
+        <th>RH</th>
+    </tr>
+    {% for data in current_weather %}
+    <tr>
+        <td>{{ data.current_time }}</td>
+        <td>{{ data.Rain }}</td>
+        <td>{{ data.WSmax }}</td>
+        <td>{{ data.WDmax }}</td>
+        <td>{{ data.WS }}</td>
+        <td>{{ data.WD }}</td>
+        <td>{{ data.STDwd }}</td>
+        <td>{{ data.TD }}</td>
+        <td>{{ data.TW }}</td>
+        <td>{{ data.TDmax }}</td>
+        <td>{{ data.TDmin }}</td>
+        <td>{{ data.WS1mm }}</td>
+        <td>{{ data.WS10mm }}</td>
+        <td>{{ data.time }}</td>
+        <td>{{ data.TG }}</td>
+        <td>{{ data.RH }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock content %}
