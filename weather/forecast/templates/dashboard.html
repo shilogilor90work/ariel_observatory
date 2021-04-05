@@ -5,7 +5,7 @@
 
 <link rel="stylesheet" href="{% static 'dashboard.css' %}">
 <script src="{% static 'dashboard.js' %}"></script>
-{% endblock %}
+{% endblock head%}
 {% block content %}
 
 <h2>weekly data:</h2>
@@ -82,4 +82,4 @@
     </tr>
     {% endfor %}
 </table>
-{% endblock %}
+{% endblock content %}
