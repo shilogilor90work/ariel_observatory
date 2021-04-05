@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 
 {% block head %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'dashboard.css' %}">
+<script src="{% static 'dashboard.js' %}"></script>
 {% endblock %}
 {% block content %}
 
