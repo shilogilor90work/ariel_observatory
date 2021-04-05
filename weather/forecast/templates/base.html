@@ -9,15 +9,16 @@
 {% endblock %}
 </head>
 <body>
-  {% block content %}
+
 
   <meta charset="utf-8">
   <link rel="stylesheet" href="{% static 'base.css' %}">
   <div class="header">
     <img src="{%static 'logo.jpeg'%}" alt="logo" class="logo"/>
-    <img src="{{status}}.jpeg" alt="logo" class="status"/>
+    <img src="/static/{{status}}.jpeg" alt="status" class="status"/>
   </div>
-
+  
+{% block content %}
 {% endblock %}
 
 

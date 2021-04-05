@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
-{% load static %}
+
+{% block head %}
 <link rel="stylesheet" href="{% static 'dashboard.css' %}">
 <script src="{% static 'dashboard.js' %}"></script>
-
-<body>
+{% endblock %}
+{% block content %}
 
 <h2>weekly data:</h2>
 <br><br>
@@ -79,4 +80,4 @@
     </tr>
     {% endfor %}
 </table>
-</body>
+{% endblock %}
