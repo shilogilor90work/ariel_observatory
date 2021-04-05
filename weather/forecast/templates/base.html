@@ -2,14 +2,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+{% block head %}
 <title>Ariel Observatory</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-{% block head %}
 {% endblock %}
 </head>
 <body>
 
+  {% block content %}
 
   <meta charset="utf-8">
   <link rel="stylesheet" href="{% static 'base.css' %}">
@@ -17,8 +17,7 @@
     <img src="{%static 'logo.jpeg'%}" alt="logo" class="logo"/>
     <img src="/static/{{status}}.jpeg" alt="status" class="status"/>
   </div>
-  
-{% block content %}
+
 {% endblock %}
 
 
