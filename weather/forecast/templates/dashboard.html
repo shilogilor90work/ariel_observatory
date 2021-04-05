@@ -1,11 +1,11 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
 {% block head %}
-{% load static %}
-
-<link rel="stylesheet" href="{% static 'dashboard.css' %}">
-<script src="{% static 'dashboard.js' %}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" href='/static/dashboard.css'>
+<script src='/static/dashboard.js'></script>
 {% endblock head%}
+
 {% block content %}
 
 <h2>weekly data:</h2>

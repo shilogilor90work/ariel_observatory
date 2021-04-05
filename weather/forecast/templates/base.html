@@ -1,25 +1,19 @@
 {% load static %}
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
-{% block head %}
-<title>Ariel Observatory</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-{% endblock head %}
-</head>
-<body>
+<html>
+    <head>
+      <title>Ariel Observatory</title>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    </head>
 
-  {% block content %}
-
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="{% static 'base.css' %}">
-  <div class="header">
-    <img src="{%static 'logo.jpeg'%}" alt="logo" class="logo"/>
-    <img src="/static/{{status}}.jpeg" alt="status" class="status"/>
-  </div>
-
-{% endblock content %}
-
-
-</body>
+    <body>
+      <meta charset="utf-8">
+      <link rel="stylesheet" href="{% static 'base.css' %}">
+      <div class="header">
+        <img src="{%static 'logo.jpeg'%}" alt="logo" class="logo"/>
+        <img src="/static/{{status}}.jpeg" alt="status" class="status"/>
+      </div>
+    {% block content %}{% endblock content %}
+    </body>
 </html>
