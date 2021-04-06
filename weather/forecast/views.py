@@ -1,7 +1,11 @@
 from django.shortcuts import render
+from rest_framework.decorators import api_view
 from forecast.models import Weekly, Current_Weather, Rules
+
+
 def getstatus():
     return "red"
+    
 # Create your views here.
 def status_view(request):
     """Status View
