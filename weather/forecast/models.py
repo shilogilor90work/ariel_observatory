@@ -100,50 +100,50 @@ class Rules(models.Model):
 
     status_type = models.CharField(unique=True, max_length=64, help_text=Help_status)
 
-    min_rain = models.DecimalField(default=0.0, help_text=HELP_min_rain)
-    max_rain = models.DecimalField(default=0.0, help_text=HELP_max_rain)
+    min_rain = models.DecimalField(default=0.0, max_digits=20, decimal_places=4, help_text=HELP_min_rain)
+    max_rain = models.DecimalField(default=0.0, max_digits=20, decimal_places=4, help_text=HELP_max_rain)
 
-    min_wsmax = models.DecimalField(default=0.0, help_text=HELP_min_wsmax)
-    max_wsmax = models.DecimalField(default=0.0, help_text=HELP_max_wsmax)
+    min_wsmax = models.DecimalField(default=0.0, max_digits=20, decimal_places=4, help_text=HELP_min_wsmax)
+    max_wsmax = models.DecimalField(default=0.0, max_digits=20, decimal_places=4, help_text=HELP_max_wsmax)
 
-    min_wdmax = models.DecimalField(default=0.0, help_text=HELP_min_wdmax)
-    max_wdmax = models.DecimalField(default=0.0, help_text=HELP_max_wdmax)
+    min_wdmax = models.DecimalField(default=0.0, max_digits=20, decimal_places=4, help_text=HELP_min_wdmax)
+    max_wdmax = models.DecimalField(default=0.0, max_digits=20, decimal_places=4, help_text=HELP_max_wdmax)
 
-    min_ws = models.DecimalField(default=0.0, help_text=HELP_min_ws)
-    max_ws = models.DecimalField(default=0.0, help_text=HELP_max_ws)
+    min_ws = models.DecimalField(default=0.0, max_digits=20, decimal_places=4, help_text=HELP_min_ws)
+    max_ws = models.DecimalField(default=0.0, max_digits=20, decimal_places=4, help_text=HELP_max_ws)
 
-    min_wd = models.DecimalField(default=0.0, help_text=HELP_min_wd)
-    max_wd = models.DecimalField(default=0.0, help_text=HELP_max_wd)
+    min_wd = models.DecimalField(default=0.0, max_digits=20, decimal_places=4, help_text=HELP_min_wd)
+    max_wd = models.DecimalField(default=0.0, max_digits=20, decimal_places=4, help_text=HELP_max_wd)
 
-    min_stdwd = models.DecimalField(default=0.0, help_text=HELP_min_stdwd)
-    max_stdwd = models.DecimalField(default=0.0, help_text=HELP_max_stdwd)
+    min_stdwd = models.DecimalField(default=0.0, max_digits=20, decimal_places=4, help_text=HELP_min_stdwd)
+    max_stdwd = models.DecimalField(default=0.0, max_digits=20, decimal_places=4, help_text=HELP_max_stdwd)
 
-    min_td = models.DecimalField(default=0.0, help_text=HELP_min_td)
-    max_td = models.DecimalField(default=0.0, help_text=HELP_max_td)
+    min_td = models.DecimalField(default=0.0, max_digits=20, decimal_places=4, help_text=HELP_min_td)
+    max_td = models.DecimalField(default=0.0, max_digits=20, decimal_places=4, help_text=HELP_max_td)
 
-    min_tw = models.DecimalField(default=0.0, help_text=HELP_min_tw)
-    max_tw = models.DecimalField(default=0.0, help_text=HELP_max_tw)
+    min_tw = models.DecimalField(default=0.0, max_digits=20, decimal_places=4, help_text=HELP_min_tw)
+    max_tw = models.DecimalField(default=0.0, max_digits=20, decimal_places=4, help_text=HELP_max_tw)
 
-    min_tdmax = models.DecimalField(default=0.0, help_text=HELP_min_tdmax)
-    max_tdmax = models.DecimalField(default=0.0, help_text=HELP_max_tdmax)
+    min_tdmax = models.DecimalField(default=0.0, max_digits=20, decimal_places=4, help_text=HELP_min_tdmax)
+    max_tdmax = models.DecimalField(default=0.0, max_digits=20, decimal_places=4, help_text=HELP_max_tdmax)
 
-    min_tdmin = models.DecimalField(default=0.0, help_text=HELP_min_tdmin)
-    max_tdmin = models.DecimalField(default=0.0, help_text=HELP_max_tdmin)
+    min_tdmin = models.DecimalField(default=0.0, max_digits=20, decimal_places=4, help_text=HELP_min_tdmin)
+    max_tdmin = models.DecimalField(default=0.0, max_digits=20, decimal_places=4, help_text=HELP_max_tdmin)
 
-    min_ws1mm = models.DecimalField(default=0.0, help_text=HELP_min_ws1mm)
-    max_ws1mm = models.DecimalField(default=0.0, help_text=HELP_max_ws1mm)
+    min_ws1mm = models.DecimalField(default=0.0, max_digits=20, decimal_places=4, help_text=HELP_min_ws1mm)
+    max_ws1mm = models.DecimalField(default=0.0, max_digits=20, decimal_places=4, help_text=HELP_max_ws1mm)
 
-    min_ws10mm = models.DecimalField(default=0.0, help_text=HELP_min_ws10mm)
-    max_ws10mm = models.DecimalField(default=0.0, help_text=HELP_max_ws10mm)
+    min_ws10mm = models.DecimalField(default=0.0, max_digits=20, decimal_places=4, help_text=HELP_min_ws10mm)
+    max_ws10mm = models.DecimalField(default=0.0, max_digits=20, decimal_places=4, help_text=HELP_max_ws10mm)
 
-    min_time = models.DecimalField(default=0.0, help_text=HELP_min_time)
-    max_time = models.DecimalField(default=0.0, help_text=HELP_max_time)
+    min_time = models.DecimalField(default=0.0, max_digits=20, decimal_places=4, help_text=HELP_min_time)
+    max_time = models.DecimalField(default=0.0, max_digits=20, decimal_places=4, help_text=HELP_max_time)
 
-    min_tg = models.DecimalField(default=0.0, help_text=HELP_min_tg)
-    max_tg = models.DecimalField(default=0.0, help_text=HELP_max_tg)
+    min_tg = models.DecimalField(default=0.0, max_digits=20, decimal_places=4, help_text=HELP_min_tg)
+    max_tg = models.DecimalField(default=0.0, max_digits=20, decimal_places=4, help_text=HELP_max_tg)
 
-    min_rh = models.DecimalField(default=0.0, help_text=HELP_min_rh)
-    max_rh = models.DecimalField(default=0.0, help_text=HELP_max_rh)
+    min_rh = models.DecimalField(default=0.0, max_digits=20, decimal_places=4, help_text=HELP_min_rh)
+    max_rh = models.DecimalField(default=0.0, max_digits=20, decimal_places=4, help_text=HELP_max_rh)
 
     weather = models.CharField(unique=True, max_length=64, help_text=Help_status)
 
