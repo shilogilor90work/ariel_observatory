@@ -1,85 +1,254 @@
 {% extends "base.html" %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial;}
 
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+</style>
+</head>
+<body>
 {% block head %}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<link rel="stylesheet" href='/static/dashboard.css'>
-<script src='/static/dashboard.js'></script>
 {% endblock head%}
 
 {% block content %}
+<h2>Tabs</h2>
+<p>Click on the buttons inside the tabbed menu:</p>
 
-<h2>weekly data:</h2>
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'Green')">Green</button>
+  <button class="tablinks" onclick="openCity(event, 'Yellow')">Yellow</button>
+  <button class="tablinks" onclick="openCity(event, 'Red')">Red</button>
+    <button class="tablinks" onclick="openCity(event, 'Manual')">Manual</button>
+
+</div>
+
+<div id="Green" class="tabcontent">
+  <br><br>
+  <h2>state color data</h2>
+  <form action="3.15.42.218/rules">
+  <label for="fname">rain:</label>
+  <input type="number" id="min_rain" name="min_rain" value="0.00" step=".01">
+  <input type="number" id="max_rain" name="max_rain" value="0.00" step=".01"><br><br>
+    <label for="fname">wsmax:</label>
+  <input type="number" id="min_wsmax" name="min_wsmax" value="0.00" step=".01">
+  <input type="number" id="max_wsmax" name="max_wsmax" value="0.00" step=".01"><br><br>
+    <label for="fname">wdmax:</label>
+  <input type="number" id="min_wdmax" name="min_wdmax" value="0.00" step=".01">
+  <input type="number" id="max_wdmax" name="max_wdmax" value="0.00" step=".01"><br><br>
+    <label for="fname">ws:</label>
+  <input type="number" id="min_ws" name="min_ws" value="0.00" step=".01">
+  <input type="number" id="max_ws" name="max_ws" value="0.00" step=".01"><br><br>
+      <label for="fname">wd:</label>
+  <input type="number" id="min_wd" name="min_wd" value="0.00" step=".01">
+  <input type="number" id="max_wd" name="max_wd" value="0.00" step=".01"><br><br>
+      <label for="fname">stdwd:</label>
+  <input type="number" id="min_stdwd" name="min_stdwd" value="0.00" step=".01">
+  <input type="number" id="max_stdwd" name="max_stdwd" value="0.00" step=".01"><br><br>
+      <label for="fname">td:</label>
+  <input type="number" id="min_td" name="min_td" value="0.00" step=".01">
+  <input type="number" id="max_td" name="max_td" value="0.00" step=".01"><br><br>
+      <label for="fname">tw:</label>
+  <input type="number" id="min_tw" name="min_tw" value="0.00" step=".01">
+  <input type="number" id="max_tw" name="max_tw" value="0.00" step=".01"><br><br>
+      <label for="fname">tdmax:</label>
+  <input type="number" id="min_tdmax" name="min_tdmax" value="0.00" step=".01">
+  <input type="number" id="max_tdmax" name="max_tdmax" value="0.00" step=".01"><br><br>
+      <label for="fname">tdmin:</label>
+  <input type="number" id="min_tdmin" name="min_tdmin" value="0.00" step=".01">
+  <input type="number" id="max_tdmin" name="max_tdmin" value="0.00" step=".01"><br><br>
+      <label for="fname">ws1mm:</label>
+  <input type="number" id="min_ws1mm" name="min_ws1mm" value="0.00" step=".01">
+  <input type="number" id="max_ws1mm" name="max_ws1mm" value="0.00" step=".01"><br><br>
+      <label for="fname">ws10mm:</label>
+  <input type="number" id="min_ws10mm" name="min_ws10mm" value="0.00" step=".01">
+  <input type="number" id="max_ws10mm" name="max_ws10mm" value="0.00" step=".01"><br><br>
+      <label for="fname">time:</label>
+  <input type="number" id="min_time" name="min_time" value="0.00" step=".01">
+  <input type="number" id="max_time" name="max_time" value="0.00" step=".01"><br><br>
+      <label for="fname">tg:</label>
+  <input type="number" id="min_tg" name="min_tg" value="0.00" step=".01">
+  <input type="number" id="max_tg" name="max_tg" value="0.00" step=".01"><br><br>
+    <label for="fname">rh:</label>
+  <input type="number" id="min_rh" name="min_rh" value="0.00" step=".01">
+  <input type="number" id="max_rh" name="max_rh" value="0.00" step=".01"><br><br>
+    <input type="submit" value="Submit">
+  </form>
+
+</div>
+
+<div id="Yellow" class="tabcontent">
+  <br><br>
+  <h2>state color data</h2>
+  <form action="3.15.42.218/rules">
+  <label for="fname">rain:</label>
+  <input type="number" id="min_rain" name="min_rain" value="0.00" step=".01">
+  <input type="number" id="max_rain" name="max_rain" value="0.00" step=".01"><br><br>
+    <label for="fname">wsmax:</label>
+  <input type="number" id="min_wsmax" name="min_wsmax" value="0.00" step=".01">
+  <input type="number" id="max_wsmax" name="max_wsmax" value="0.00" step=".01"><br><br>
+    <label for="fname">wdmax:</label>
+  <input type="number" id="min_wdmax" name="min_wdmax" value="0.00" step=".01">
+  <input type="number" id="max_wdmax" name="max_wdmax" value="0.00" step=".01"><br><br>
+    <label for="fname">ws:</label>
+  <input type="number" id="min_ws" name="min_ws" value="0.00" step=".01">
+  <input type="number" id="max_ws" name="max_ws" value="0.00" step=".01"><br><br>
+      <label for="fname">wd:</label>
+  <input type="number" id="min_wd" name="min_wd" value="0.00" step=".01">
+  <input type="number" id="max_wd" name="max_wd" value="0.00" step=".01"><br><br>
+      <label for="fname">stdwd:</label>
+  <input type="number" id="min_stdwd" name="min_stdwd" value="0.00" step=".01">
+  <input type="number" id="max_stdwd" name="max_stdwd" value="0.00" step=".01"><br><br>
+      <label for="fname">td:</label>
+  <input type="number" id="min_td" name="min_td" value="0.00" step=".01">
+  <input type="number" id="max_td" name="max_td" value="0.00" step=".01"><br><br>
+      <label for="fname">tw:</label>
+  <input type="number" id="min_tw" name="min_tw" value="0.00" step=".01">
+  <input type="number" id="max_tw" name="max_tw" value="0.00" step=".01"><br><br>
+      <label for="fname">tdmax:</label>
+  <input type="number" id="min_tdmax" name="min_tdmax" value="0.00" step=".01">
+  <input type="number" id="max_tdmax" name="max_tdmax" value="0.00" step=".01"><br><br>
+      <label for="fname">tdmin:</label>
+  <input type="number" id="min_tdmin" name="min_tdmin" value="0.00" step=".01">
+  <input type="number" id="max_tdmin" name="max_tdmin" value="0.00" step=".01"><br><br>
+      <label for="fname">ws1mm:</label>
+  <input type="number" id="min_ws1mm" name="min_ws1mm" value="0.00" step=".01">
+  <input type="number" id="max_ws1mm" name="max_ws1mm" value="0.00" step=".01"><br><br>
+      <label for="fname">ws10mm:</label>
+  <input type="number" id="min_ws10mm" name="min_ws10mm" value="0.00" step=".01">
+  <input type="number" id="max_ws10mm" name="max_ws10mm" value="0.00" step=".01"><br><br>
+      <label for="fname">time:</label>
+  <input type="number" id="min_time" name="min_time" value="0.00" step=".01">
+  <input type="number" id="max_time" name="max_time" value="0.00" step=".01"><br><br>
+      <label for="fname">tg:</label>
+  <input type="number" id="min_tg" name="min_tg" value="0.00" step=".01">
+  <input type="number" id="max_tg" name="max_tg" value="0.00" step=".01"><br><br>
+    <label for="fname">rh:</label>
+  <input type="number" id="min_rh" name="min_rh" value="0.00" step=".01">
+  <input type="number" id="max_rh" name="max_rh" value="0.00" step=".01"><br><br>
+    <input type="submit" value="Submit">
+  </form>
+
+</div>
+
+<div id="Red" class="tabcontent">
+  <br><br>
+  <h2>state color data</h2>
+  <form action="3.15.42.218/rules">
+  <label for="fname">rain:</label>
+  <input type="number" id="min_rain" name="min_rain" value="0.00" step=".01">
+  <input type="number" id="max_rain" name="max_rain" value="0.00" step=".01"><br><br>
+    <label for="fname">wsmax:</label>
+  <input type="number" id="min_wsmax" name="min_wsmax" value="0.00" step=".01">
+  <input type="number" id="max_wsmax" name="max_wsmax" value="0.00" step=".01"><br><br>
+    <label for="fname">wdmax:</label>
+  <input type="number" id="min_wdmax" name="min_wdmax" value="0.00" step=".01">
+  <input type="number" id="max_wdmax" name="max_wdmax" value="0.00" step=".01"><br><br>
+    <label for="fname">ws:</label>
+  <input type="number" id="min_ws" name="min_ws" value="0.00" step=".01">
+  <input type="number" id="max_ws" name="max_ws" value="0.00" step=".01"><br><br>
+      <label for="fname">wd:</label>
+  <input type="number" id="min_wd" name="min_wd" value="0.00" step=".01">
+  <input type="number" id="max_wd" name="max_wd" value="0.00" step=".01"><br><br>
+      <label for="fname">stdwd:</label>
+  <input type="number" id="min_stdwd" name="min_stdwd" value="0.00" step=".01">
+  <input type="number" id="max_stdwd" name="max_stdwd" value="0.00" step=".01"><br><br>
+      <label for="fname">td:</label>
+  <input type="number" id="min_td" name="min_td" value="0.00" step=".01">
+  <input type="number" id="max_td" name="max_td" value="0.00" step=".01"><br><br>
+      <label for="fname">tw:</label>
+  <input type="number" id="min_tw" name="min_tw" value="0.00" step=".01">
+  <input type="number" id="max_tw" name="max_tw" value="0.00" step=".01"><br><br>
+      <label for="fname">tdmax:</label>
+  <input type="number" id="min_tdmax" name="min_tdmax" value="0.00" step=".01">
+  <input type="number" id="max_tdmax" name="max_tdmax" value="0.00" step=".01"><br><br>
+      <label for="fname">tdmin:</label>
+  <input type="number" id="min_tdmin" name="min_tdmin" value="0.00" step=".01">
+  <input type="number" id="max_tdmin" name="max_tdmin" value="0.00" step=".01"><br><br>
+      <label for="fname">ws1mm:</label>
+  <input type="number" id="min_ws1mm" name="min_ws1mm" value="0.00" step=".01">
+  <input type="number" id="max_ws1mm" name="max_ws1mm" value="0.00" step=".01"><br><br>
+      <label for="fname">ws10mm:</label>
+  <input type="number" id="min_ws10mm" name="min_ws10mm" value="0.00" step=".01">
+  <input type="number" id="max_ws10mm" name="max_ws10mm" value="0.00" step=".01"><br><br>
+      <label for="fname">time:</label>
+  <input type="number" id="min_time" name="min_time" value="0.00" step=".01">
+  <input type="number" id="max_time" name="max_time" value="0.00" step=".01"><br><br>
+      <label for="fname">tg:</label>
+  <input type="number" id="min_tg" name="min_tg" value="0.00" step=".01">
+  <input type="number" id="max_tg" name="max_tg" value="0.00" step=".01"><br><br>
+    <label for="fname">rh:</label>
+  <input type="number" id="min_rh" name="min_rh" value="0.00" step=".01">
+  <input type="number" id="max_rh" name="max_rh" value="0.00" step=".01"><br><br>
+    <input type="submit" value="Submit">
+  </form>
+
+</div>
+
+<div id="Manual" class="tabcontent">
+  <form action="3.15.42.218/rules">
+
+  <input type="submit" value="Submit">
+
+  <br><br>
+
+</div>
+<script>
+
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
 <br><br>
-    <!-- {% for data in weekly %}
-        <h1>{{ data.forecast_time }}  -- {{ data.weather_code }}  -- {{ data.temperature }}  -- {{ data.weather }}</h1> <br>
-    {% endfor %} -->
+</body>
+</html>
 
-    <table>
-        <tr>
-            <th>forecast_time</th>
-            <th>weather_code</th>
-            <th>temperature</th>
-            <th>weather</th>
-          </tr>
-          {% for data in weekly.reverse %}
-          <tr>
-        <td>{{ data.forecast_time }}</td>
-        <td>{{ data.weather_code }}</td>
-        <td>{{ data.temperature }}</td>
-        <td>{{ data.weather }}</td>
-    </tr>
-    {% endfor %}
-</table>
-    <br><br><br><br>
-<h2>    current data:</h2>
-    <!-- <br><br>
-    {% for data in current_weather %}
-        <h1>{{ data.current_time }}  -- {{ data.Rain }}  -- {{ data.WSmax }}  -- {{ data.WDmax }} --
-        {{ data.WS }}  -- {{ data.WD }}  -- {{ data.STDwd }}  -- {{ data.TD }} --
-      {{ data.TW }}  -- {{ data.TDmax }}  -- {{ data.TDmin }}  -- {{ data.WS1mm }} --
-    {{ data.WS10mm }}  -- {{ data.time }}  -- {{ data.TG }}  -- {{ data.RH }}</h1> <br>
-    {% endfor %} -->
-
-
-
-<table>
-    <tr>
-        <th>current_time</th>
-        <th>Rain</th>
-        <th>WSmax</th>
-        <th>WDmax</th>
-        <th>WS</th>
-        <th>WD</th>
-        <th>STDwd</th>
-        <th>TD</th>
-        <th>TW</th>
-        <th>TDmax</th>
-        <th>TDmin</th>
-        <th>WS1mm</th>
-        <th>WS10mm</th>
-        <th>time</th>
-        <th>TG</th>
-        <th>RH</th>
-    </tr>
-    {% for data in current_weather %}
-    <tr>
-        <td>{{ data.current_time }}</td>
-        <td>{{ data.Rain }}</td>
-        <td>{{ data.WSmax }}</td>
-        <td>{{ data.WDmax }}</td>
-        <td>{{ data.WS }}</td>
-        <td>{{ data.WD }}</td>
-        <td>{{ data.STDwd }}</td>
-        <td>{{ data.TD }}</td>
-        <td>{{ data.TW }}</td>
-        <td>{{ data.TDmax }}</td>
-        <td>{{ data.TDmin }}</td>
-        <td>{{ data.WS1mm }}</td>
-        <td>{{ data.WS10mm }}</td>
-        <td>{{ data.time }}</td>
-        <td>{{ data.TG }}</td>
-        <td>{{ data.RH }}</td>
-    </tr>
-    {% endfor %}
-</table>
 {% endblock content %}
