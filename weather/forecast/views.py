@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from forecast.models import Weekly, Current_Weather,
+from forecast.models import Weekly, Current_Weather, Rules
 def getstatus():
     return "red"
 # Create your views here.
