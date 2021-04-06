@@ -56,3 +56,101 @@ class Current_Weather(models.Model):
             {self.WS} -- {self.WD} -- {self.STDwd} -- {self.TD} -- \
             {self.TW} -- {self.TDmax} -- {self.TDmin} -- {self.WS1mm} -- \
             {self.WS10mm} -- {self.time} -- {self.TG} -- {self.RH}"
+
+
+
+class Rules(models.Model):
+    """Rules
+    """
+
+    Help_status = 'the status color'
+    HELP_min_rain = 'min rain'
+    HELP_max_rain = 'max rain'
+    HELP_min_wsmax = 'min wsmax'
+    HELP_max_wsmax = 'max wsmax'
+    HELP_min_wdmax = 'min wdmax'
+    HELP_max_wdmax = 'max wdmax'
+    HELP_min_ws = 'min ws'
+    HELP_max_ws = 'max ws'
+    HELP_min_wd = 'min wd'
+    HELP_max_wd = 'max wd'
+    HELP_stdwd = 'min wsmax'
+    HELP_stdwd = 'max wsmax'
+    HELP_min_stdwd = 'min stdwd'
+    HELP_max_stdwd = 'max stdwd'
+    HELP_min_td = 'min td'
+    HELP_max_td = 'max td'
+    HELP_min_tw = 'min tw'
+    HELP_max_tw = 'max tw'
+    HELP_min_tdmax = 'min tdmax'
+    HELP_max_tdmax = 'max tdmax'
+    HELP_min_tdmin = 'min tdmin'
+    HELP_max_tdmin = 'max tdmin'
+    HELP_min_ws1mm = 'min ws1mm'
+    HELP_max_ws1mm = 'max ws1mm'
+    HELP_min_ws10mm = 'min ws10mm'
+    HELP_max_ws10mm = 'max ws10mm'
+    HELP_min_time = 'min time'
+    HELP_max_time = 'max time'
+    HELP_min_tg = 'min tg'
+    HELP_max_tg = 'max tg'
+    HELP_min_rh = 'min rh'
+    HELP_max_rh = 'max rh'
+
+    status_type = models.CharField(unique=True, max_length=64, help_text=Help_status)
+
+    min_rain = models.DecimalField(Default=0, help_text=HELP_min_rain)
+    max_rain = models.DecimalField(Default=0, help_text=HELP_max_rain)
+
+    min_wsmax = models.DecimalField(Default=0, help_text=HELP_min_wsmax)
+    max_wsmax = models.DecimalField(Default=0, help_text=HELP_max_wsmax)
+
+    min_wdmax = models.DecimalField(Default=0, help_text=HELP_min_wdmax)
+    max_wdmax = models.DecimalField(Default=0, help_text=HELP_max_wdmax)
+
+    min_ws = models.DecimalField(Default=0, help_text=HELP_min_ws)
+    max_ws = models.DecimalField(Default=0, help_text=HELP_max_ws)
+
+    min_wd = models.DecimalField(Default=0, help_text=HELP_min_wd)
+    max_wd = models.DecimalField(Default=0, help_text=HELP_max_wd)
+
+    min_stdwd = models.DecimalField(Default=0, help_text=HELP_min_stdwd)
+    max_stdwd = models.DecimalField(Default=0, help_text=HELP_max_stdwd)
+
+    min_td = models.DecimalField(Default=0, help_text=HELP_min_td)
+    max_td = models.DecimalField(Default=0, help_text=HELP_max_td)
+
+    min_tw = models.DecimalField(Default=0, help_text=HELP_min_tw)
+    max_tw = models.DecimalField(Default=0, help_text=HELP_max_tw)
+
+    min_tdmax = models.DecimalField(Default=0, help_text=HELP_min_tdmax)
+    max_tdmax = models.DecimalField(Default=0, help_text=HELP_max_tdmax)
+
+    min_tdmin = models.DecimalField(Default=0, help_text=HELP_min_tdmin)
+    max_tdmin = models.DecimalField(Default=0, help_text=HELP_max_tdmin)
+
+    min_ws1mm = models.DecimalField(Default=0, help_text=HELP_min_ws1mm)
+    max_ws1mm = models.DecimalField(Default=0, help_text=HELP_max_ws1mm)
+
+    min_ws10mm = models.DecimalField(Default=0, help_text=HELP_min_ws10mm)
+    max_ws10mm = models.DecimalField(Default=0, help_text=HELP_max_ws10mm)
+
+    min_time = models.DecimalField(Default=0, help_text=HELP_min_time)
+    max_time = models.DecimalField(Default=0, help_text=HELP_max_time)
+
+    min_tg = models.DecimalField(Default=0, help_text=HELP_min_tg)
+    max_tg = models.DecimalField(Default=0, help_text=HELP_max_tg)
+
+    min_rh = models.DecimalField(Default=0, help_text=HELP_min_rh)
+    max_rh = models.DecimalField(Default=0, help_text=HELP_max_rh)
+
+    weather = models.CharField(unique=True, max_length=64, help_text=Help_status)
+
+
+    def __str__(self):
+        return f"status_type {status_type} - name, min, max : \nrain, {min_rain}, {max_rain} \nrwsmax, {min_wsmax}, {max_wsmax} \
+        \nwdmax, {min_wdmax}, {max_wdmax} \nws, {min_ws}, {max_ws} \nwsmax, {min_wsmax}, {max_wsmax} \
+        \nwd, {min_wd}, {max_wd} \nstdwd, {min_stdwd}, {max_stdwd} \ntd, {min_td}, {max_td}\
+        \ntw, {min_tw}, {max_tw} \ntdmax, {min_tdmax}, {max_tdmax} \ntdmin, {min_tdmin}, {max_tdmin}\
+        \nws1mm, {min_ws1mm}, {max_ws1mm} \nws10mm, {min_ws10mm}, {max_ws10mm} \ntime, {min_time}, {max_time} \
+        \ntg, {min_tg}, {max_tg} \nrh, {min_rh}, {max_rh} \nweather, {weather}, {max_ws1mm} "
