@@ -40,7 +40,7 @@ def rules_view(request):
     return render(request, 'rules.html', context)
 
 
-@api_view(['POST'])
+# @api_view(['POST'])
 def hello_world(request):
     """Hello World"""
     print(request)
