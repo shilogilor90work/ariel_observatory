@@ -1,11 +1,11 @@
 from django.shortcuts import render
-from rest_framework.decorators import api_view
+# from rest_framework.decorators import api_view
 from forecast.models import Weekly, Current_Weather, Rules
 
 
 def getstatus():
     return "red"
-    
+
 # Create your views here.
 def status_view(request):
     """Status View
@@ -39,7 +39,7 @@ def rules_view(request):
     return render(request, 'rules.html', context)
 
 
-@api_view(['POST'])
-def hello_world(request):
-    """Hello World"""
-    return Response({"message": "Hello, world!"})
+# @api_view(['POST'])
+# def hello_world(request):
+#     """Hello World"""
+#     return Response({"message": "Hello, world!"})
