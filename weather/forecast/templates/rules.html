@@ -59,7 +59,7 @@ body {font-family: Arial;}
 {% if rule.status_type != 'Manual' %}
 <div id="{{rule.status_type}}" class="tabcontent" style="display: block;">
   <br><br>
-  <h2>state color data</h2>
+  <h2>state color {{rule.status_type}}</h2>
   <form method="POST">
   <label for="fname">rain:</label>
   <input type="text" id="status_type" name="status_type" value="{{rule.status_type}}" style="display: none;">
