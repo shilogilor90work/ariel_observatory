@@ -64,7 +64,8 @@ def update_rules(request):
     if rule.exists() and rule.status_type == "Manual":
         print("Manual")
     elif rule.exists():
-        rule.update(min_rain=2.20)
+        rule.min_rain = Decimal(request.POST.get('min_rain')
+        rule.save()
         # rule.update(min_rain=Decimal(request.POST.get('min_rain')), max_rain=Decimal(request.POST.get('max_rain')), min_wsmax=Decimal(request.POST.get('min_wsmax')), max_wsmax=Decimal(request.POST.get('max_wsmax')),
     #     min_wdmax=Decimal(request.POST.get('min_wdmax')), max_wdmax=Decimal(request.POST.get('max_wdmax')), min_ws=Decimal(request.POST.get('min_ws')), max_ws=Decimal(request.POST.get('max_ws')), min_wd=Decimal(request.POST.get('min_wd')),
     #     max_wd=Decimal(request.POST.get('max_wd')), min_stdwd=Decimal(request.POST.get('min_stdwd')),
@@ -83,4 +84,4 @@ def update_rules(request):
     #     min_time=Decimal(request.POST.get('min_time')), max_time=Decimal(request.POST.get('max_time')), min_tg=Decimal(request.POST.get('min_tg')), max_tg=Decimal(request.POST.get('max_tg')),
         # min_rh=Decimal(request.POST.get('min_rh')), max_rh=Decimal(request.POST.get('max_rh')), weather=str(request.POST.get('weather')))
     # return render(request, 'dashboard.html', context)
-    return Response({"message": "Hello, world!"})
+    return Response({"message": request})
