@@ -98,7 +98,7 @@ class Rules(models.Model):
     HELP_min_rh = 'min rh'
     HELP_max_rh = 'max rh'
 
-    status_type = models.CharField(unique=True, max_length=64, help_text=Help_status)
+    status_type = models.CharField(max_length=64, help_text=Help_status)
 
     min_rain = models.DecimalField(default=0.0, max_digits=20, decimal_places=4, help_text=HELP_min_rain)
     max_rain = models.DecimalField(default=0.0, max_digits=20, decimal_places=4, help_text=HELP_max_rain)
