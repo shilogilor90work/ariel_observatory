@@ -149,9 +149,9 @@ class Rules(models.Model):
 
 
     def __str__(self):
-        return f"status_type {status_type} - name, min, max : \nrain, {min_rain}, {max_rain} \nrwsmax, {min_wsmax}, {max_wsmax} \
-        \nwdmax, {min_wdmax}, {max_wdmax} \nws, {min_ws}, {max_ws} \nwsmax, {min_wsmax}, {max_wsmax} \
-        \nwd, {min_wd}, {max_wd} \nstdwd, {min_stdwd}, {max_stdwd} \ntd, {min_td}, {max_td}\
-        \ntw, {min_tw}, {max_tw} \ntdmax, {min_tdmax}, {max_tdmax} \ntdmin, {min_tdmin}, {max_tdmin}\
-        \nws1mm, {min_ws1mm}, {max_ws1mm} \nws10mm, {min_ws10mm}, {max_ws10mm} \ntime, {min_time}, {max_time} \
-        \ntg, {min_tg}, {max_tg} \nrh, {min_rh}, {max_rh} \nweather, {weather}, {max_ws1mm} "
+        return f"status_type {self.status_type} - name, min, max : \nrain, {self.min_rain}, {self.max_rain} \nrwsmax, {self.min_wsmax}, {self.max_wsmax} \
+        \nwdmax, {self.min_wdmax}, {self.max_wdmax} \nws, {self.min_ws}, {self.max_ws} \nwsmax, {self.min_wsmax}, {self.max_wsmax} \
+        \nwd, {self.min_wd}, {self.max_wd} \nstdwd, {self.min_stdwd}, {self.max_stdwd} \ntd, {self.min_td}, {self.max_td}\
+        \ntw, {self.min_tw}, {self.max_tw} \ntdmax, {self.min_tdmax}, {self.max_tdmax} \ntdmin, {self.min_tdmin}, {self.max_tdmin}\
+        \nws1mm, {self.min_ws1mm}, {self.max_ws1mm} \nws10mm, {self.min_ws10mm}, {self.max_ws10mm} \ntime, {self.min_time}, {self.max_time} \
+        \ntg, {self.min_tg}, {self.max_tg} \nrh, {self.min_rh}, {self.max_rh} \nweather, {self.weather}, {self.max_ws1mm} "
