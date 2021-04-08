@@ -51,7 +51,7 @@ body {font-family: Arial;}
 
 <div class="tab">
   <!-- {% for rule in rules %} -->
-  <button class="tablinks" onclick="openCity(event, {{rule.status_type}})">{{rule.status_type}}</button>
+  <button class="tablinks" onclick="openCity(event, 'Green')">Green</button>
   <button class="tablinks" onclick="openCity(event, 'Yellow')">Yellow</button>
   <button class="tablinks" onclick="openCity(event, 'Red')">Red</button>
   <!-- {% endfor %} -->
@@ -136,7 +136,7 @@ $('form').on('submit',function(e){
     $.ajax({
         type     : "POST",
         cache    : false,
-        url      : "rules/update_rules/"
+        url      : "rules/update_rules/",
         data     : $(this).serialize(),
         success  : function(data) {
           console.log(data)
