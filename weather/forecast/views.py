@@ -60,7 +60,7 @@ def update_rules(request):
             Response -- Response object.
     """
     print(request)
-    rule = Rules.objects.filter(status_type=request.POST.get('status_type'))
+    rule = Rules.objects.get(status_type=request.POST.get('status_type'))
     if rule.exists() and rule.status_type == "Manual":
         print("Manual")
     elif rule.exists():
