@@ -59,6 +59,7 @@ def update_rules(request):
         Returns:
             Response -- Response object.
     """
+    print(request)
     rule = Rules.objects.filter(status_type=request.POST.get('status_type'))
     if rule.exists() and rule.status_type == "Manual":
         print("Manual")
@@ -80,6 +81,5 @@ def update_rules(request):
         min_ws1mm=Decimal(request.POST.get('min_ws1mm')), max_ws1mm=Decimal(request.POST.get('max_ws1mm')), min_ws10mm=Decimal(request.POST.get('min_ws10mm')), max_ws10mm=Decimal(request.POST.get('max_ws10mm')),
         min_time=Decimal(request.POST.get('min_time')), max_time=Decimal(request.POST.get('max_time')), min_tg=Decimal(request.POST.get('min_tg')), max_tg=Decimal(request.POST.get('max_tg')),
         min_rh=Decimal(request.POST.get('min_rh')), max_rh=Decimal(request.POST.get('max_rh')), weather=str(request.POST.get('weather')))
-    print(request)
     # return render(request, 'dashboard.html', context)
     return Response({"message": "Hello, world!"})
