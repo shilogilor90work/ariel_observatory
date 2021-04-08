@@ -37,7 +37,7 @@ def rules_view(request):
         Render -- Render object.
     """
     rules = Rules.objects.all()
-    context = {"rules": rules}
+    context = {"rules": rules, "status": "red"}
     return render(request, 'rules.html', context)
 
 
