@@ -75,8 +75,8 @@ class Rules(models.Model):
     HELP_max_ws = 'max ws'
     HELP_min_wd = 'min wd'
     HELP_max_wd = 'max wd'
-    HELP_stdwd = 'min wsmax'
-    HELP_stdwd = 'max wsmax'
+    HELP_min_wsmax = 'min wsmax'
+    HELP_max_wsmax = 'max wsmax'
     HELP_min_stdwd = 'min stdwd'
     HELP_max_stdwd = 'max stdwd'
     HELP_min_td = 'min td'
@@ -98,7 +98,7 @@ class Rules(models.Model):
     HELP_min_rh = 'min rh'
     HELP_max_rh = 'max rh'
 
-    status_type = models.CharField(unique=True, max_length=64, help_text=Help_status)
+    status_type = models.CharField(primary_key=True, max_length=64, help_text=Help_status)
 
     min_rain = models.DecimalField(default=0.0, max_digits=20, decimal_places=4, help_text=HELP_min_rain)
     max_rain = models.DecimalField(default=0.0, max_digits=20, decimal_places=4, help_text=HELP_max_rain)
@@ -145,13 +145,13 @@ class Rules(models.Model):
     min_rh = models.DecimalField(default=0.0, max_digits=20, decimal_places=4, help_text=HELP_min_rh)
     max_rh = models.DecimalField(default=0.0, max_digits=20, decimal_places=4, help_text=HELP_max_rh)
 
-    weather = models.CharField(unique=True, max_length=64, help_text=Help_status)
+    weather = models.CharField(max_length=64, help_text=Help_status)
 
 
     def __str__(self):
-        return f"status_type {status_type} - name, min, max : \nrain, {min_rain}, {max_rain} \nrwsmax, {min_wsmax}, {max_wsmax} \
-        \nwdmax, {min_wdmax}, {max_wdmax} \nws, {min_ws}, {max_ws} \nwsmax, {min_wsmax}, {max_wsmax} \
-        \nwd, {min_wd}, {max_wd} \nstdwd, {min_stdwd}, {max_stdwd} \ntd, {min_td}, {max_td}\
-        \ntw, {min_tw}, {max_tw} \ntdmax, {min_tdmax}, {max_tdmax} \ntdmin, {min_tdmin}, {max_tdmin}\
-        \nws1mm, {min_ws1mm}, {max_ws1mm} \nws10mm, {min_ws10mm}, {max_ws10mm} \ntime, {min_time}, {max_time} \
-        \ntg, {min_tg}, {max_tg} \nrh, {min_rh}, {max_rh} \nweather, {weather}, {max_ws1mm} "
+        return f"status_type {self.status_type} - name, min, max : \nrain, {self.min_rain}, {self.max_rain} \nrwsmax, {self.min_wsmax}, {self.max_wsmax} \
+        \nwdmax, {self.min_wdmax}, {self.max_wdmax} \nws, {self.min_ws}, {self.max_ws} \nwsmax, {self.min_wsmax}, {self.max_wsmax} \
+        \nwd, {self.min_wd}, {self.max_wd} \nstdwd, {self.min_stdwd}, {self.max_stdwd} \ntd, {self.min_td}, {self.max_td}\
+        \ntw, {self.min_tw}, {self.max_tw} \ntdmax, {self.min_tdmax}, {self.max_tdmax} \ntdmin, {self.min_tdmin}, {self.max_tdmin}\
+        \nws1mm, {self.min_ws1mm}, {self.max_ws1mm} \nws10mm, {self.min_ws10mm}, {self.max_ws10mm} \ntime, {self.min_time}, {self.max_time} \
+        \ntg, {self.min_tg}, {self.max_tg} \nrh, {self.min_rh}, {self.max_rh} \nweather, {self.weather}, {self.max_ws1mm} "

@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 <!DOCTYPE html>
-<html>
-<head>
+{% block head %}
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 body {font-family: Arial;}
@@ -43,9 +42,6 @@ body {font-family: Arial;}
   border-top: none;
 }
 </style>
-</head>
-<body>
-{% block head %}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 {% endblock head%}
 
@@ -57,174 +53,76 @@ body {font-family: Arial;}
   <button class="tablinks" onclick="openCity(event, 'Green')">Green</button>
   <button class="tablinks" onclick="openCity(event, 'Yellow')">Yellow</button>
   <button class="tablinks" onclick="openCity(event, 'Red')">Red</button>
-    <button class="tablinks" onclick="openCity(event, 'Manual')">Manual</button>
-
+  <button class="tablinks" onclick="openCity(event, 'Manual')">Manual</button>
 </div>
-
-<div id="Green" class="tabcontent" style="display: block;">
+{% for rule in rules %}
+{% if rule.status_type != 'Manual' %}
+<div id="{{rule.status_type}}" class="tabcontent" style="display: block;">
   <br><br>
-  <h2>state color data</h2>
-  <form action="3.15.42.218/rules">
+  <h2>state color {{rule.status_type}}</h2>
+  <form method="POST">
   <label for="fname">rain:</label>
-  <input type="number" id="min_rain" name="min_rain" value="0.00" step=".01">
-  <input type="number" id="max_rain" name="max_rain" value="0.00" step=".01"><br><br>
+  <input type="text" id="status_type" name="status_type" value="{{rule.status_type}}" style="display: none;">
+
+  <input type="number" id="min_rain" name="min_rain" value="{{rule.min_rain}}" step=".01">
+  <input type="number" id="max_rain" name="max_rain" value="{{rule.max_rain}}" step=".01"><br><br>
     <label for="fname">wsmax:</label>
-  <input type="number" id="min_wsmax" name="min_wsmax" value="0.00" step=".01">
-  <input type="number" id="max_wsmax" name="max_wsmax" value="0.00" step=".01"><br><br>
+  <input type="number" id="min_wsmax" name="min_wsmax" value="{{rule.min_wsmax}}" step=".01">
+  <input type="number" id="max_wsmax" name="max_wsmax" value="{{rule.max_wsmax}}" step=".01"><br><br>
     <label for="fname">wdmax:</label>
-  <input type="number" id="min_wdmax" name="min_wdmax" value="0.00" step=".01">
-  <input type="number" id="max_wdmax" name="max_wdmax" value="0.00" step=".01"><br><br>
+  <input type="number" id="min_wdmax" name="min_wdmax" value="{{rule.min_wdmax}}" step=".01">
+  <input type="number" id="max_wdmax" name="max_wdmax" value="{{rule.max_wdmax}}" step=".01"><br><br>
     <label for="fname">ws:</label>
-  <input type="number" id="min_ws" name="min_ws" value="0.00" step=".01">
-  <input type="number" id="max_ws" name="max_ws" value="0.00" step=".01"><br><br>
+  <input type="number" id="min_ws" name="min_ws" value={{rule.min_ws}} step=".01">
+  <input type="number" id="max_ws" name="max_ws" value={{rule.max_ws}} step=".01"><br><br>
       <label for="fname">wd:</label>
-  <input type="number" id="min_wd" name="min_wd" value="0.00" step=".01">
-  <input type="number" id="max_wd" name="max_wd" value="0.00" step=".01"><br><br>
+  <input type="number" id="min_wd" name="min_wd" value={{rule.min_wd}} step=".01">
+  <input type="number" id="max_wd" name="max_wd" value={{rule.max_wd}} step=".01"><br><br>
       <label for="fname">stdwd:</label>
-  <input type="number" id="min_stdwd" name="min_stdwd" value="0.00" step=".01">
-  <input type="number" id="max_stdwd" name="max_stdwd" value="0.00" step=".01"><br><br>
+  <input type="number" id="min_stdwd" name="min_stdwd" value={{rule.min_stdwd}} step=".01">
+  <input type="number" id="max_stdwd" name="max_stdwd" value={{rule.max_stdwd}} step=".01"><br><br>
       <label for="fname">td:</label>
-  <input type="number" id="min_td" name="min_td" value="0.00" step=".01">
-  <input type="number" id="max_td" name="max_td" value="0.00" step=".01"><br><br>
+  <input type="number" id="min_td" name="min_td" value={{rule.min_td}} step=".01">
+  <input type="number" id="max_td" name="max_td" value={{rule.max_td}} step=".01"><br><br>
       <label for="fname">tw:</label>
-  <input type="number" id="min_tw" name="min_tw" value="0.00" step=".01">
-  <input type="number" id="max_tw" name="max_tw" value="0.00" step=".01"><br><br>
+  <input type="number" id="min_tw" name="min_tw" value={{rule.min_tw}} step=".01">
+  <input type="number" id="max_tw" name="max_tw" value={{rule.max_tw}} step=".01"><br><br>
       <label for="fname">tdmax:</label>
-  <input type="number" id="min_tdmax" name="min_tdmax" value="0.00" step=".01">
-  <input type="number" id="max_tdmax" name="max_tdmax" value="0.00" step=".01"><br><br>
+  <input type="number" id="min_tdmax" name="min_tdmax" value={{rule.min_tdmax}} step=".01">
+  <input type="number" id="max_tdmax" name="max_tdmax" value={{rule.max_tdmax}} step=".01"><br><br>
       <label for="fname">tdmin:</label>
-  <input type="number" id="min_tdmin" name="min_tdmin" value="0.00" step=".01">
-  <input type="number" id="max_tdmin" name="max_tdmin" value="0.00" step=".01"><br><br>
+  <input type="number" id="min_tdmin" name="min_tdmin" value={{rule.min_tdmin}} step=".01">
+  <input type="number" id="max_tdmin" name="max_tdmin" value={{rule.max_tdmin}} step=".01"><br><br>
       <label for="fname">ws1mm:</label>
-  <input type="number" id="min_ws1mm" name="min_ws1mm" value="0.00" step=".01">
-  <input type="number" id="max_ws1mm" name="max_ws1mm" value="0.00" step=".01"><br><br>
+  <input type="number" id="min_ws1mm" name="min_ws1mm" value={{rule.min_ws1mm}} step=".01">
+  <input type="number" id="max_ws1mm" name="max_ws1mm" value={{rule.max_ws1mm}} step=".01"><br><br>
       <label for="fname">ws10mm:</label>
-  <input type="number" id="min_ws10mm" name="min_ws10mm" value="0.00" step=".01">
-  <input type="number" id="max_ws10mm" name="max_ws10mm" value="0.00" step=".01"><br><br>
+  <input type="number" id="min_ws10mm" name="min_ws10mm" value={{rule.min_ws10mm}} step=".01">
+  <input type="number" id="max_ws10mm" name="max_ws10mm" value={{rule.max_ws10mm}} step=".01"><br><br>
       <label for="fname">time:</label>
-  <input type="number" id="min_time" name="min_time" value="0.00" step=".01">
-  <input type="number" id="max_time" name="max_time" value="0.00" step=".01"><br><br>
+  <input type="number" id="min_time" name="min_time" value={{rule.min_time}} step=".01">
+  <input type="number" id="max_time" name="max_time" value={{rule.max_time}} step=".01"><br><br>
       <label for="fname">tg:</label>
-  <input type="number" id="min_tg" name="min_tg" value="0.00" step=".01">
-  <input type="number" id="max_tg" name="max_tg" value="0.00" step=".01"><br><br>
+  <input type="number" id="min_tg" name="min_tg" value={{rule.min_tg}} step=".01">
+  <input type="number" id="max_tg" name="max_tg" value={{rule.max_tg}} step=".01"><br><br>
     <label for="fname">rh:</label>
-  <input type="number" id="min_rh" name="min_rh" value="0.00" step=".01">
-  <input type="number" id="max_rh" name="max_rh" value="0.00" step=".01"><br><br>
+  <input type="number" id="min_rh" name="min_rh" value={{rule.min_rh}} step=".01">
+  <input type="number" id="max_rh" name="max_rh" value={{rule.max_rh}} step=".01"><br><br>
+  <label for="fname">weather code:</label>
+
+  <input type="number" id="weather" name="weather" value={{rule.weather}}><br><br>
+
     <input type="submit" value="Submit">
   </form>
 
 </div>
-
-<div id="Yellow" class="tabcontent" style="display: none;">
-  <br><br>
-  <h2>state color data</h2>
-  <form action="3.15.42.218/rules">
-  <label for="fname">rain:</label>
-  <input type="number" id="min_rain" name="min_rain" value="0.00" step=".01">
-  <input type="number" id="max_rain" name="max_rain" value="0.00" step=".01"><br><br>
-    <label for="fname">wsmax:</label>
-  <input type="number" id="min_wsmax" name="min_wsmax" value="0.00" step=".01">
-  <input type="number" id="max_wsmax" name="max_wsmax" value="0.00" step=".01"><br><br>
-    <label for="fname">wdmax:</label>
-  <input type="number" id="min_wdmax" name="min_wdmax" value="0.00" step=".01">
-  <input type="number" id="max_wdmax" name="max_wdmax" value="0.00" step=".01"><br><br>
-    <label for="fname">ws:</label>
-  <input type="number" id="min_ws" name="min_ws" value="0.00" step=".01">
-  <input type="number" id="max_ws" name="max_ws" value="0.00" step=".01"><br><br>
-      <label for="fname">wd:</label>
-  <input type="number" id="min_wd" name="min_wd" value="0.00" step=".01">
-  <input type="number" id="max_wd" name="max_wd" value="0.00" step=".01"><br><br>
-      <label for="fname">stdwd:</label>
-  <input type="number" id="min_stdwd" name="min_stdwd" value="0.00" step=".01">
-  <input type="number" id="max_stdwd" name="max_stdwd" value="0.00" step=".01"><br><br>
-      <label for="fname">td:</label>
-  <input type="number" id="min_td" name="min_td" value="0.00" step=".01">
-  <input type="number" id="max_td" name="max_td" value="0.00" step=".01"><br><br>
-      <label for="fname">tw:</label>
-  <input type="number" id="min_tw" name="min_tw" value="0.00" step=".01">
-  <input type="number" id="max_tw" name="max_tw" value="0.00" step=".01"><br><br>
-      <label for="fname">tdmax:</label>
-  <input type="number" id="min_tdmax" name="min_tdmax" value="0.00" step=".01">
-  <input type="number" id="max_tdmax" name="max_tdmax" value="0.00" step=".01"><br><br>
-      <label for="fname">tdmin:</label>
-  <input type="number" id="min_tdmin" name="min_tdmin" value="0.00" step=".01">
-  <input type="number" id="max_tdmin" name="max_tdmin" value="0.00" step=".01"><br><br>
-      <label for="fname">ws1mm:</label>
-  <input type="number" id="min_ws1mm" name="min_ws1mm" value="0.00" step=".01">
-  <input type="number" id="max_ws1mm" name="max_ws1mm" value="0.00" step=".01"><br><br>
-      <label for="fname">ws10mm:</label>
-  <input type="number" id="min_ws10mm" name="min_ws10mm" value="0.00" step=".01">
-  <input type="number" id="max_ws10mm" name="max_ws10mm" value="0.00" step=".01"><br><br>
-      <label for="fname">time:</label>
-  <input type="number" id="min_time" name="min_time" value="0.00" step=".01">
-  <input type="number" id="max_time" name="max_time" value="0.00" step=".01"><br><br>
-      <label for="fname">tg:</label>
-  <input type="number" id="min_tg" name="min_tg" value="0.00" step=".01">
-  <input type="number" id="max_tg" name="max_tg" value="0.00" step=".01"><br><br>
-    <label for="fname">rh:</label>
-  <input type="number" id="min_rh" name="min_rh" value="0.00" step=".01">
-  <input type="number" id="max_rh" name="max_rh" value="0.00" step=".01"><br><br>
-    <input type="submit" value="Submit">
-  </form>
-
-</div>
-
-<div id="Red" class="tabcontent" style="display: none;">
-  <br><br>
-  <h2>state color data</h2>
-  <form action="3.15.42.218/rules">
-  <label for="fname">rain:</label>
-  <input type="number" id="min_rain" name="min_rain" value="0.00" step=".01">
-  <input type="number" id="max_rain" name="max_rain" value="0.00" step=".01"><br><br>
-    <label for="fname">wsmax:</label>
-  <input type="number" id="min_wsmax" name="min_wsmax" value="0.00" step=".01">
-  <input type="number" id="max_wsmax" name="max_wsmax" value="0.00" step=".01"><br><br>
-    <label for="fname">wdmax:</label>
-  <input type="number" id="min_wdmax" name="min_wdmax" value="0.00" step=".01">
-  <input type="number" id="max_wdmax" name="max_wdmax" value="0.00" step=".01"><br><br>
-    <label for="fname">ws:</label>
-  <input type="number" id="min_ws" name="min_ws" value="0.00" step=".01">
-  <input type="number" id="max_ws" name="max_ws" value="0.00" step=".01"><br><br>
-      <label for="fname">wd:</label>
-  <input type="number" id="min_wd" name="min_wd" value="0.00" step=".01">
-  <input type="number" id="max_wd" name="max_wd" value="0.00" step=".01"><br><br>
-      <label for="fname">stdwd:</label>
-  <input type="number" id="min_stdwd" name="min_stdwd" value="0.00" step=".01">
-  <input type="number" id="max_stdwd" name="max_stdwd" value="0.00" step=".01"><br><br>
-      <label for="fname">td:</label>
-  <input type="number" id="min_td" name="min_td" value="0.00" step=".01">
-  <input type="number" id="max_td" name="max_td" value="0.00" step=".01"><br><br>
-      <label for="fname">tw:</label>
-  <input type="number" id="min_tw" name="min_tw" value="0.00" step=".01">
-  <input type="number" id="max_tw" name="max_tw" value="0.00" step=".01"><br><br>
-      <label for="fname">tdmax:</label>
-  <input type="number" id="min_tdmax" name="min_tdmax" value="0.00" step=".01">
-  <input type="number" id="max_tdmax" name="max_tdmax" value="0.00" step=".01"><br><br>
-      <label for="fname">tdmin:</label>
-  <input type="number" id="min_tdmin" name="min_tdmin" value="0.00" step=".01">
-  <input type="number" id="max_tdmin" name="max_tdmin" value="0.00" step=".01"><br><br>
-      <label for="fname">ws1mm:</label>
-  <input type="number" id="min_ws1mm" name="min_ws1mm" value="0.00" step=".01">
-  <input type="number" id="max_ws1mm" name="max_ws1mm" value="0.00" step=".01"><br><br>
-      <label for="fname">ws10mm:</label>
-  <input type="number" id="min_ws10mm" name="min_ws10mm" value="0.00" step=".01">
-  <input type="number" id="max_ws10mm" name="max_ws10mm" value="0.00" step=".01"><br><br>
-      <label for="fname">time:</label>
-  <input type="number" id="min_time" name="min_time" value="0.00" step=".01">
-  <input type="number" id="max_time" name="max_time" value="0.00" step=".01"><br><br>
-      <label for="fname">tg:</label>
-  <input type="number" id="min_tg" name="min_tg" value="0.00" step=".01">
-  <input type="number" id="max_tg" name="max_tg" value="0.00" step=".01"><br><br>
-    <label for="fname">rh:</label>
-  <input type="number" id="min_rh" name="min_rh" value="0.00" step=".01">
-  <input type="number" id="max_rh" name="max_rh" value="0.00" step=".01"><br><br>
-    <input type="submit" value="Submit">
-  </form>
+  {% endif %}
+  {% endfor %}
 
 </div>
 
 <div id="Manual" class="tabcontent" style="display: none;">
-  <form action="3.15.42.218/rules">
+  <form method="POST" >
 
   <input type="submit" value="Submit">
 
@@ -232,6 +130,22 @@ body {font-family: Arial;}
 
 </div>
 <script>
+
+$('form').on('submit',function(e){
+    e.preventDefault();
+    $.ajax({
+        type     : "POST",
+        cache    : false,
+        url      : "update_rules/",
+        data     : $(this).serialize(),
+        success  : function(data) {
+          console.log(data)
+        }
+    });
+
+});
+document.getElementById("Red").style.display = "None";
+document.getElementById("Yellow").style.display = "None";
 
 function openCity(evt, cityName) {
   var i, tabcontent, tablinks;
@@ -248,7 +162,5 @@ function openCity(evt, cityName) {
 }
 </script>
 <br><br>
-</body>
-</html>
 
 {% endblock content %}
