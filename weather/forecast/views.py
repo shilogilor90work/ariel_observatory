@@ -16,7 +16,7 @@ def status_view(request):
         request {Requset} -- Request object.
 
     Returns:
-        Response -- Response object.
+        Render -- Render object.
     """
     status=getstatus()
     weekly = Weekly.objects.all().order_by('-forecast_time')
@@ -33,7 +33,7 @@ def rules_view(request):
         request {Requset} -- Request object.
 
     Returns:
-        Response -- Response object.
+        Render -- Render object.
     """
     rules = Rules.objects.all()
     context = {"rules": rules}
@@ -44,4 +44,41 @@ def rules_view(request):
 def hello_world(request):
     """Hello World"""
     print(request)
+    return render(request, 'dashboard.html', context)
+    # return Response({"message": "Hello, world!"})
+
+
+@api_view(['POST'])
+def update_rules(request):
+    """Update Rules
+    updates the database with the new rules and returns the status
+        Arguments:
+            request {Requset} -- Request object.
+
+        Returns:
+            Response -- Response object.
+    """
+    rule = Rules.objects.filter(status_type=request.POST.get('status_type'))
+    if rule.exists() and rule.status_type == "Manual":
+        print("Manual")
+    elif rule.exists():
+        rule.objects.update(min_rain=str(request.POST.get('min_rain')), max_rain=str(request.POST.get('max_rain')), min_wsmax=str(request.POST.get('min_wsmax')), max_wsmax=str(request.POST.get('max_wsmax')),
+        min_wdmax=str(request.POST.get('min_wdmax')), max_wdmax=str(request.POST.get('max_wdmax')), min_ws=str(request.POST.get('min_ws')), max_ws=str(request.POST.get('max_ws')), min_wd=str(request.POST.get('min_wd')),
+        max_wd=str(request.POST.get('max_wd')), min_wsmax=str(request.POST.get('min_wsmax')), max_wsmax=str(request.POST.get('max_wsmax')), min_stdwd=str(request.POST.get('min_stdwd')),
+        max_stdwd=str(request.POST.get('max_stdwd')), min_td=str(request.POST.get('min_td')), max_td=str(request.POST.get('max_td')), min_tw=str(request.POST.get('min_tw')),
+        max_tw=str(request.POST.get('max_tw')), min_tdmax=str(request.POST.get('min_tdmax')), max_tdmax=str(request.POST.get('max_tdmax')), min_tdmin=str(request.POST.get('min_tdmin')), max_tdmin=str(request.POST.get('max_tdmin')),
+        min_ws1mm=str(request.POST.get('min_ws1mm')), max_ws1mm=str(request.POST.get('max_ws1mm')), min_ws10mm=str(request.POST.get('min_ws10mm')), max_ws10mm=str(request.POST.get('max_ws10mm')),
+        min_time=str(request.POST.get('min_time')), max_time=str(request.POST.get('max_time')), min_tg=str(request.POST.get('min_tg')), max_tg=str(request.POST.get('max_tg')),
+        min_rh=str(request.POST.get('min_rh')), max_rh=str(request.POST.get('max_rh')), weather=str(request.POST.get('weather')))
+    else:
+        rule.objects.create(status_type=request.POST.get('status_type'), min_rain=str(request.POST.get('min_rain')), max_rain=str(request.POST.get('max_rain')), min_wsmax=str(request.POST.get('min_wsmax')), max_wsmax=str(request.POST.get('max_wsmax')),
+        min_wdmax=str(request.POST.get('min_wdmax')), max_wdmax=str(request.POST.get('max_wdmax')), min_ws=str(request.POST.get('min_ws')), max_ws=str(request.POST.get('max_ws')), min_wd=str(request.POST.get('min_wd')),
+        max_wd=str(request.POST.get('max_wd')), min_wsmax=str(request.POST.get('min_wsmax')), max_wsmax=str(request.POST.get('max_wsmax')), min_stdwd=str(request.POST.get('min_stdwd')),
+        max_stdwd=str(request.POST.get('max_stdwd')), min_td=str(request.POST.get('min_td')), max_td=str(request.POST.get('max_td')), min_tw=str(request.POST.get('min_tw')),
+        max_tw=str(request.POST.get('max_tw')), min_tdmax=str(request.POST.get('min_tdmax')), max_tdmax=str(request.POST.get('max_tdmax')), min_tdmin=str(request.POST.get('min_tdmin')), max_tdmin=str(request.POST.get('max_tdmin')),
+        min_ws1mm=str(request.POST.get('min_ws1mm')), max_ws1mm=str(request.POST.get('max_ws1mm')), min_ws10mm=str(request.POST.get('min_ws10mm')), max_ws10mm=str(request.POST.get('max_ws10mm')),
+        min_time=str(request.POST.get('min_time')), max_time=str(request.POST.get('max_time')), min_tg=str(request.POST.get('min_tg')), max_tg=str(request.POST.get('max_tg')),
+        min_rh=str(request.POST.get('min_rh')), max_rh=str(request.POST.get('max_rh')), weather=str(request.POST.get('weather')))
+    print(request)
+    # return render(request, 'dashboard.html', context)
     return Response({"message": "Hello, world!"})
