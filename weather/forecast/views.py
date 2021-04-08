@@ -65,7 +65,8 @@ def update_rules(request):
         print("Manual")
     elif rule.exists():
         rule = rule.first()
-        rule.update(min_rain=50.5)
+        rule.min_rain=50.5
+        rule.save()
 
         # rule.update(min_rain=Decimal(request.POST.get('min_rain')), max_rain=Decimal(request.POST.get('max_rain')), min_wsmax=Decimal(request.POST.get('min_wsmax')), max_wsmax=Decimal(request.POST.get('max_wsmax')),
     #     min_wdmax=Decimal(request.POST.get('min_wdmax')), max_wdmax=Decimal(request.POST.get('max_wdmax')), min_ws=Decimal(request.POST.get('min_ws')), max_ws=Decimal(request.POST.get('max_ws')), min_wd=Decimal(request.POST.get('min_wd')),
