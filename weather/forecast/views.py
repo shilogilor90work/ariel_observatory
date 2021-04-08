@@ -62,7 +62,7 @@ def update_rules(request):
     if rule.exists() and rule.status_type == "Manual":
         print("Manual")
     elif rule.exists():
-        rule.objects.update(min_rain=str(request.POST.get('min_rain')), max_rain=str(request.POST.get('max_rain')), min_wsmax=str(request.POST.get('min_wsmax')), max_wsmax=str(request.POST.get('max_wsmax')),
+        rule.update(min_rain=str(request.POST.get('min_rain')), max_rain=str(request.POST.get('max_rain')), min_wsmax=str(request.POST.get('min_wsmax')), max_wsmax=str(request.POST.get('max_wsmax')),
         min_wdmax=str(request.POST.get('min_wdmax')), max_wdmax=str(request.POST.get('max_wdmax')), min_ws=str(request.POST.get('min_ws')), max_ws=str(request.POST.get('max_ws')), min_wd=str(request.POST.get('min_wd')),
         max_wd=str(request.POST.get('max_wd')), min_stdwd=str(request.POST.get('min_stdwd')),
         max_stdwd=str(request.POST.get('max_stdwd')), min_td=str(request.POST.get('min_td')), max_td=str(request.POST.get('max_td')), min_tw=str(request.POST.get('min_tw')),
@@ -71,7 +71,7 @@ def update_rules(request):
         min_time=str(request.POST.get('min_time')), max_time=str(request.POST.get('max_time')), min_tg=str(request.POST.get('min_tg')), max_tg=str(request.POST.get('max_tg')),
         min_rh=str(request.POST.get('min_rh')), max_rh=str(request.POST.get('max_rh')), weather=str(request.POST.get('weather')))
     else:
-        rule.objects.create(status_type=request.POST.get('status_type'), min_rain=str(request.POST.get('min_rain')), max_rain=str(request.POST.get('max_rain')), min_wsmax=str(request.POST.get('min_wsmax')), max_wsmax=str(request.POST.get('max_wsmax')),
+        Rules.objects.create(status_type=request.POST.get('status_type'), min_rain=str(request.POST.get('min_rain')), max_rain=str(request.POST.get('max_rain')), min_wsmax=str(request.POST.get('min_wsmax')), max_wsmax=str(request.POST.get('max_wsmax')),
         min_wdmax=str(request.POST.get('min_wdmax')), max_wdmax=str(request.POST.get('max_wdmax')), min_ws=str(request.POST.get('min_ws')), max_ws=str(request.POST.get('max_ws')), min_wd=str(request.POST.get('min_wd')),
         max_wd=str(request.POST.get('max_wd')), min_stdwd=str(request.POST.get('min_stdwd')),
         max_stdwd=str(request.POST.get('max_stdwd')), min_td=str(request.POST.get('min_td')), max_td=str(request.POST.get('max_td')), min_tw=str(request.POST.get('min_tw')),
