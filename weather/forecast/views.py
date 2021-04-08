@@ -95,7 +95,7 @@ def update_rules(request):
         rule.max_tg = Decimal(request.POST.get('max_tg'))
         rule.min_rh = Decimal(request.POST.get('min_rh'))
         rule.max_rh = Decimal(request.POST.get('max_rh'))
-        rule.weather = Decimal(request.POST.get('weather'))
+        rule.weather = request.POST.get('weather')
         rule.save()
 
         # rule.update(min_rain=Decimal(request.POST.get('min_rain')), max_rain=Decimal(request.POST.get('max_rain')), min_wsmax=Decimal(request.POST.get('min_wsmax')), max_wsmax=Decimal(request.POST.get('max_wsmax')),
@@ -116,4 +116,4 @@ def update_rules(request):
     #     min_time=Decimal(request.POST.get('min_time')), max_time=Decimal(request.POST.get('max_time')), min_tg=Decimal(request.POST.get('min_tg')), max_tg=Decimal(request.POST.get('max_tg')),
         # min_rh=Decimal(request.POST.get('min_rh')), max_rh=Decimal(request.POST.get('max_rh')), weather=str(request.POST.get('weather')))
     # return render(request, 'dashboard.html', context)
-    return Response({"message": request.POST.get('status_type')} + " was updated")
+    return Response({"message": str(request.POST.get('status_type')}) + " was updated")
