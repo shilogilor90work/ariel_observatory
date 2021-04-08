@@ -60,10 +60,11 @@ def update_rules(request):
             Response -- Response object.
     """
     print(request)
-    rule = Rules.objects.get(status_type=request.POST.get('status_type'))
+    rule = Rules.objects.filter(status_type=request.POST.get('status_type'))
     if rule.exists() and rule.status_type == "Manual":
         print("Manual")
     elif rule.exists():
+        rule = rule.first()
         rule.min_rain = Decimal(request.POST.get('min_rain')
         rule.save()
         # rule.update(min_rain=Decimal(request.POST.get('min_rain')), max_rain=Decimal(request.POST.get('max_rain')), min_wsmax=Decimal(request.POST.get('min_wsmax')), max_wsmax=Decimal(request.POST.get('max_wsmax')),
