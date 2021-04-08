@@ -145,7 +145,7 @@ class Rules(models.Model):
     min_rh = models.DecimalField(default=0.0, max_digits=20, decimal_places=4, help_text=HELP_min_rh)
     max_rh = models.DecimalField(default=0.0, max_digits=20, decimal_places=4, help_text=HELP_max_rh)
 
-    weather = models.CharField(unique=True, max_length=64, help_text=Help_status)
+    weather = models.CharField(max_length=64, help_text=Help_status)
 
 
     def __str__(self):
