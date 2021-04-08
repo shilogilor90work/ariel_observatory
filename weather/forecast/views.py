@@ -64,7 +64,7 @@ def update_rules(request):
     elif rule.exists():
         rule.objects.update(min_rain=str(request.POST.get('min_rain')), max_rain=str(request.POST.get('max_rain')), min_wsmax=str(request.POST.get('min_wsmax')), max_wsmax=str(request.POST.get('max_wsmax')),
         min_wdmax=str(request.POST.get('min_wdmax')), max_wdmax=str(request.POST.get('max_wdmax')), min_ws=str(request.POST.get('min_ws')), max_ws=str(request.POST.get('max_ws')), min_wd=str(request.POST.get('min_wd')),
-        max_wd=str(request.POST.get('max_wd')), min_wsmax=str(request.POST.get('min_wsmax')), max_wsmax=str(request.POST.get('max_wsmax')), min_stdwd=str(request.POST.get('min_stdwd')),
+        max_wd=str(request.POST.get('max_wd')), min_stdwd=str(request.POST.get('min_stdwd')),
         max_stdwd=str(request.POST.get('max_stdwd')), min_td=str(request.POST.get('min_td')), max_td=str(request.POST.get('max_td')), min_tw=str(request.POST.get('min_tw')),
         max_tw=str(request.POST.get('max_tw')), min_tdmax=str(request.POST.get('min_tdmax')), max_tdmax=str(request.POST.get('max_tdmax')), min_tdmin=str(request.POST.get('min_tdmin')), max_tdmin=str(request.POST.get('max_tdmin')),
         min_ws1mm=str(request.POST.get('min_ws1mm')), max_ws1mm=str(request.POST.get('max_ws1mm')), min_ws10mm=str(request.POST.get('min_ws10mm')), max_ws10mm=str(request.POST.get('max_ws10mm')),
@@ -73,7 +73,7 @@ def update_rules(request):
     else:
         rule.objects.create(status_type=request.POST.get('status_type'), min_rain=str(request.POST.get('min_rain')), max_rain=str(request.POST.get('max_rain')), min_wsmax=str(request.POST.get('min_wsmax')), max_wsmax=str(request.POST.get('max_wsmax')),
         min_wdmax=str(request.POST.get('min_wdmax')), max_wdmax=str(request.POST.get('max_wdmax')), min_ws=str(request.POST.get('min_ws')), max_ws=str(request.POST.get('max_ws')), min_wd=str(request.POST.get('min_wd')),
-        max_wd=str(request.POST.get('max_wd')), min_wsmax=str(request.POST.get('min_wsmax')), max_wsmax=str(request.POST.get('max_wsmax')), min_stdwd=str(request.POST.get('min_stdwd')),
+        max_wd=str(request.POST.get('max_wd')), min_stdwd=str(request.POST.get('min_stdwd')),
         max_stdwd=str(request.POST.get('max_stdwd')), min_td=str(request.POST.get('min_td')), max_td=str(request.POST.get('max_td')), min_tw=str(request.POST.get('min_tw')),
         max_tw=str(request.POST.get('max_tw')), min_tdmax=str(request.POST.get('min_tdmax')), max_tdmax=str(request.POST.get('max_tdmax')), min_tdmin=str(request.POST.get('min_tdmin')), max_tdmin=str(request.POST.get('max_tdmin')),
         min_ws1mm=str(request.POST.get('min_ws1mm')), max_ws1mm=str(request.POST.get('max_ws1mm')), min_ws10mm=str(request.POST.get('min_ws10mm')), max_ws10mm=str(request.POST.get('max_ws10mm')),
