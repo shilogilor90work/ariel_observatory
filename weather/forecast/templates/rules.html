@@ -62,6 +62,8 @@ body {font-family: Arial;}
   <h2>state color data</h2>
   <form method="POST">
   <label for="fname">rain:</label>
+  <input type="text" id="status_type" name="status_type" value="{{rule.status_type}}" style="display: none;">
+
   <input type="number" id="min_rain" name="min_rain" value="{{rule.min_rain}}" step=".01">
   <input type="number" id="max_rain" name="max_rain" value="{{rule.max_rain}}" step=".01"><br><br>
     <label for="fname">wsmax:</label>
