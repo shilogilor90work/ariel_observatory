@@ -15,6 +15,7 @@ def scrape_IMS_weekly():
     chrome_options.add_argument('--disable-dev-shm-usage')
     d = webdriver.Chrome("/usr/bin/chromedriver",chrome_options=chrome_options)
     url = future_forecast_site + zone_ariel
+    print(url)
     d.get(url)
     text_of_d = d.execute_script("return document.body.innerText;")
     print(text_of_d)
