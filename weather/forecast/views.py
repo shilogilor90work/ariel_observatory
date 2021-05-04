@@ -16,233 +16,233 @@ def getstatus():
             status_temp.append(0)
         elif rule.min_rain<10:
             status_temp.append(1)
-        else
+        else:
             return "red"
         if rule.max_rain<5:
             status_temp.append(0)
         elif rule.max_rain<10:
             status_temp.append(1)
-        else
+        else:
             return "red"
         if rule.min_wsmax<5:
             status_temp.append(0)
         elif rule.min_wsmax<10:
             status_temp.append(1)
-        else
+        else:
             return "red"
         if rule.max_wsmax<5:
             status_temp.append(0)
         elif rule.max_wsmax<10:
             status_temp.append(1)
-        else
+        else:
             return "red"
         if rule.min_wdmax<5:
             status_temp.append(0)
         elif rule.min_wdmax<10:
             status_temp.append(1)
-        else
+        else:
             return "red"
         if rule.max_wdmax<5:
             status_temp.append(0)
         elif rule.max_wdmax<10:
             status_temp.append(1)
-        else
+        else:
             return "red"
 
         if rule.min_ws<5:
             status_temp.append(0)
         elif rule.min_ws<10:
             status_temp.append(1)
-        else
+        else:
             return "red"
 
         if rule.max_ws<5:
             status_temp.append(0)
         elif rule.max_ws<10:
             status_temp.append(1)
-        else
+        else:
             return "red"
 
         if rule.min_wd<5:
             status_temp.append(0)
         elif rule.min_wd<10:
             status_temp.append(1)
-        else
+        else:
             return "red"
 
         if rule.max_wd<5:
             status_temp.append(0)
         elif rule.max_wd<10:
             status_temp.append(1)
-        else
+        else:
             return "red"
 
         if rule.min_stdwd<5:
             status_temp.append(0)
         elif rule.min_stdwd<10:
             status_temp.append(1)
-        else
+        else:
             return "red"
 
         if rule.max_stdwd<5:
             status_temp.append(0)
         elif rule.max_stdwd<10:
             status_temp.append(1)
-        else
+        else:
             return "red"
 
         if rule.min_td<5:
             status_temp.append(0)
         elif rule.min_td<10:
             status_temp.append(1)
-        else
+        else:
             return "red"
 
         if rule.max_td<5:
             status_temp.append(0)
         elif rule.max_td<10:
             status_temp.append(1)
-        else
+        else:
             return "red"
 
         if rule.min_td<5:
             status_temp.append(0)
         elif rule.min_td<10:
             status_temp.append(1)
-        else
+        else:
             return "red"
 
         if rule.max_td<5:
             status_temp.append(0)
         elif rule.max_td<10:
             status_temp.append(1)
-        else
+        else:
             return "red"
 
         if rule.min_tw<5:
             status_temp.append(0)
         elif rule.min_tw<10:
             status_temp.append(1)
-        else
+        else:
             return "red"
 
         if rule.max_tw<5:
             status_temp.append(0)
         elif rule.max_tw<10:
             status_temp.append(1)
-        else
+        else:
             return "red"
 
         if rule.min_tdmax<5:
             status_temp.append(0)
         elif rule.min_tdmax<10:
             status_temp.append(1)
-        else
+        else:
             return "red"
 
         if rule.max_tdmax<5:
             status_temp.append(0)
         elif rule.max_tdmax<10:
             status_temp.append(1)
-        else
+        else:
             return "red"
 
         if rule.min_tdmin<5:
             status_temp.append(0)
         elif rule.min_tdmin<10:
             status_temp.append(1)
-        else
+        else:
             return "red"
 
         if rule.max_tdmin<5:
             status_temp.append(0)
         elif rule.max_tdmin<10:
             status_temp.append(1)
-        else
+        else:
             return "red"
 
         if rule.min_ws1mm<5:
             status_temp.append(0)
         elif rule.min_ws1mm<10:
             status_temp.append(1)
-        else
+        else:
             return "red"
 
         if rule.max_ws1mm<5:
             status_temp.append(0)
         elif rule.max_ws1mm<10:
             status_temp.append(1)
-        else
+        else:
             return "red"
 
         if rule.min_ws10mm<5:
             status_temp.append(0)
         elif rule.min_ws10mm<10:
             status_temp.append(1)
-        else
+        else:
             return "red"
 
         if rule.max_ws10mm<5:
             status_temp.append(0)
         elif rule.max_ws10mm<10:
             status_temp.append(1)
-        else
+        else:
             return "red"
 
         if rule.min_time<5:
             status_temp.append(0)
         elif rule.min_time<10:
             status_temp.append(1)
-        else
+        else:
             return "red"
 
         if rule.max_time<5:
             status_temp.append(0)
         elif rule.max_time<10:
             status_temp.append(1)
-        else
+        else:
             return "red"
 
         if rule.min_tg<5:
             status_temp.append(0)
         elif rule.min_tg<10:
             status_temp.append(1)
-        else
+        else:
             return "red"
 
         if rule.max_tg<5:
             status_temp.append(0)
         elif rule.max_tg<10:
             status_temp.append(1)
-        else
+        else:
             return "red"
 
         if rule.min_rh<5:
             status_temp.append(0)
         elif rule.min_rh<10:
             status_temp.append(1)
-        else
+        else:
             return "red"
 
         if rule.max_rh<5:
             status_temp.append(0)
         elif rule.max_rh<10:
             status_temp.append(1)
-        else
+        else:
             return "red"
 
         if rule.weather<5:
             status_temp.append(0)
         elif rule.weather<10:
             status_temp.append(1)
-        else
+        else:
             return "red"
 
 
 
-    elif status_temp.max()==1
+    elif status_temp.max()==1:
         return "yellow"
-    else
+    else:
         return "green"
 
 # Create your views here.
