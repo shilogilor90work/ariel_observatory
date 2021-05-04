@@ -3,16 +3,22 @@ from forecast.models import Weekly
 from datetime import datetime
 import json
 import requests
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
+
 
 def scrape_IMS_weekly():
+
+    chrome_options = Options()
+    chrome_options.add_argument('--headless')
+    chrome_options.add_argument('--no-sandbox')
+    chrome_options.add_argument('--disable-dev-shm-usage')
+    d = webdriver.Chrome("/usr/bin/chromedriver",chrome_options=chrome_options)
     url = future_forecast_site + zone_ariel
-    # Token givven by IMS
-    headers = {
-      'Authorization' : 'ApiToken ' + API_TOKEN
-    }
+    d.get(url)
+
     # request
-    response = requests.request("GET", url, headers=headers)
-    data= json.loads(response.text.encode('utf8'))
+    data= json.loads(d.execute_script("return document.querySelector('pre').innerText;").encode('utf8'))
     # parse data
     current_data = []
     for day in list(data['data'].values()):
