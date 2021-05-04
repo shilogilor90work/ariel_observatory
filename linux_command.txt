@@ -26,3 +26,6 @@ from forecast.extraction.scraping_IMS_weekly import scrape_IMS_weekly
 scrape_IMS_weekly()
 
 sudo python3 manage.py runserver 0.0.0.0:80
+
+// from weather:
+sudo mv chromedriver /usr/bin/
