@@ -6,7 +6,7 @@ from forecast.models import Weekly, Current_Weather, Rules
 from datetime import datetime
 
 def getstatus():
-    status_temp
+    status_temp =[]
     rule = Rules.objects.all()
     first_weekly = Weekly.objects.filter(forecast_time__gte=datetime.now()).order_by('forecast_time')
     if rule.exists() and rule.first().status_type == "Manual":
