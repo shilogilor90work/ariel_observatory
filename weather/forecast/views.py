@@ -240,7 +240,7 @@ def getstatus():
 
 
 
-    elif status_temp.max()==1:
+    elif max(status_temp)==1:
         return "yellow"
     else:
         return "green"
