@@ -5,9 +5,13 @@ import json
 import requests
 
 def scrape_IMS_weekly():
+    url = future_forecast_site + zone_ariel
+    # Token givven by IMS
+    headers = {
+      'Authorization' : 'ApiToken ' + API_TOKEN
+    }
     # request
-    response = requests.post(future_forecast_site + zone_ariel)
-    # dump data
+    response = requests.request("GET", url, headers=headers)
     data= json.loads(response.text.encode('utf8'))
     # parse data
     current_data = []
