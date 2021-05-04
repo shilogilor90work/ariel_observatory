@@ -16,9 +16,10 @@ def scrape_IMS_weekly():
     d = webdriver.Chrome("/usr/bin/chromedriver",chrome_options=chrome_options)
     url = future_forecast_site + zone_ariel
     d.get(url)
-
+    text_of_d = d.execute_script("return document.body.innerText;")
+    print(text_of_d)
     # request
-    data= json.loads(d.execute_script("return document.querySelector('pre').innerText;").encode('utf8'))
+    data= json.loads(text_of_d.encode('utf8'))
     # parse data
     current_data = []
     for day in list(data['data'].values()):
