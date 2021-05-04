@@ -6,13 +6,14 @@
 {% endblock head%}
 
 {% block content %}
-
+<br>
 <div class="tab">
   <button class="tablinks tab_green" onclick="openCity(event, 'Green')">Green</button>
   <button class="tablinks tab_yellow" onclick="openCity(event, 'Yellow')">Yellow</button>
   <button class="tablinks tab_red" onclick="openCity(event, 'Red')">Red</button>
   <button class="tablinks tab_manual" onclick="openCity(event, 'Manual')">Manual</button>
 </div>
+<br><br>
 {% for rule in rules %}
 {% if rule.status_type != 'Manual' %}
 <div id="{{rule.status_type}}" class="tabcontent" style="display: block;">
