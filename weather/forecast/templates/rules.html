@@ -13,7 +13,6 @@
   <button class="tablinks tab_red" onclick="openCity(event, 'Red')">Red</button>
   <button class="tablinks tab_manual" onclick="openCity(event, 'Manual')">Manual</button>
 </div>
-<br><br>
 {% for rule in rules %}
 {% if rule.status_type != 'Manual' %}
 <div id="{{rule.status_type}}" class="tabcontent" style="display: block;">
