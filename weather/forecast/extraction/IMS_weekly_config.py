@@ -50,3 +50,4 @@ current_forecast_site = "https://ims.gov.il/he/now_analysis"
 #lid 73
 zone_ariel = "73"
 future_forecast_site = "https://ims.gov.il/he/forecast_data/"
+CHROMEDRIVER_PATH = "/home/ec2-user/ariel_observatory/chromedriver"

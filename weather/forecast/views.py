@@ -3,9 +3,12 @@ from rest_framework.response import Response
 from decimal import Decimal
 from rest_framework.decorators import api_view
 from forecast.models import Weekly, Current_Weather, Rules
-
+from datetime import datetime
 
 def getstatus():
+    rules = Rules.objects.all()
+    first_weekly = Weekly.objects.filter(forecast_time__gte=datetime.now()).order_by('forecast_time')
+
     return "red"
 
 # Create your views here.
@@ -36,8 +39,9 @@ def rules_view(request):
     Returns:
         Render -- Render object.
     """
+    status=getstatus()
     rules = Rules.objects.all()
-    context = {"rules": rules, "status": "red"}
+    context = {"rules": rules, "status": status}
     return render(request, 'rules.html', context)
 
 
@@ -98,22 +102,4 @@ def update_rules(request):
         rule.weather = request.POST.get('weather')
         rule.save()
 
-        # rule.update(min_rain=Decimal(request.POST.get('min_rain')), max_rain=Decimal(request.POST.get('max_rain')), min_wsmax=Decimal(request.POST.get('min_wsmax')), max_wsmax=Decimal(request.POST.get('max_wsmax')),
-    #     min_wdmax=Decimal(request.POST.get('min_wdmax')), max_wdmax=Decimal(request.POST.get('max_wdmax')), min_ws=Decimal(request.POST.get('min_ws')), max_ws=Decimal(request.POST.get('max_ws')), min_wd=Decimal(request.POST.get('min_wd')),
-    #     max_wd=Decimal(request.POST.get('max_wd')), min_stdwd=Decimal(request.POST.get('min_stdwd')),
-    #     max_stdwd=Decimal(request.POST.get('max_stdwd')), min_td=Decimal(request.POST.get('min_td')), max_td=Decimal(request.POST.get('max_td')), min_tw=Decimal(request.POST.get('min_tw')),
-    #     max_tw=Decimal(request.POST.get('max_tw')), min_tdmax=Decimal(request.POST.get('min_tdmax')), max_tdmax=Decimal(request.POST.get('max_tdmax')), min_tdmin=Decimal(request.POST.get('min_tdmin')), max_tdmin=Decimal(request.POST.get('max_tdmin')),
-    #     min_ws1mm=Decimal(request.POST.get('min_ws1mm')), max_ws1mm=Decimal(request.POST.get('max_ws1mm')), min_ws10mm=Decimal(request.POST.get('min_ws10mm')), max_ws10mm=Decimal(request.POST.get('max_ws10mm')),
-    #     min_time=Decimal(request.POST.get('min_time')), max_time=Decimal(request.POST.get('max_time')), min_tg=Decimal(request.POST.get('min_tg')), max_tg=Decimal(request.POST.get('max_tg')),
-    #     min_rh=Decimal(request.POST.get('min_rh')), max_rh=Decimal(request.POST.get('max_rh')), weather=str(request.POST.get('weather')))
-    # else:
-    #     Rules.objects.create(status_type=request.POST.get('status_type'), min_rain=Decimal(request.POST.get('min_rain')), max_rain=Decimal(request.POST.get('max_rain')), min_wsmax=Decimal(request.POST.get('min_wsmax')), max_wsmax=Decimal(request.POST.get('max_wsmax')),
-    #     min_wdmax=Decimal(request.POST.get('min_wdmax')), max_wdmax=Decimal(request.POST.get('max_wdmax')), min_ws=Decimal(request.POST.get('min_ws')), max_ws=Decimal(request.POST.get('max_ws')), min_wd=Decimal(request.POST.get('min_wd')),
-    #     max_wd=Decimal(request.POST.get('max_wd')), min_stdwd=Decimal(request.POST.get('min_stdwd')),
-    #     max_stdwd=Decimal(request.POST.get('max_stdwd')), min_td=Decimal(request.POST.get('min_td')), max_td=Decimal(request.POST.get('max_td')), min_tw=Decimal(request.POST.get('min_tw')),
-    #     max_tw=Decimal(request.POST.get('max_tw')), min_tdmax=Decimal(request.POST.get('min_tdmax')), max_tdmax=Decimal(request.POST.get('max_tdmax')), min_tdmin=Decimal(request.POST.get('min_tdmin')), max_tdmin=Decimal(request.POST.get('max_tdmin')),
-    #     min_ws1mm=Decimal(request.POST.get('min_ws1mm')), max_ws1mm=Decimal(request.POST.get('max_ws1mm')), min_ws10mm=Decimal(request.POST.get('min_ws10mm')), max_ws10mm=Decimal(request.POST.get('max_ws10mm')),
-    #     min_time=Decimal(request.POST.get('min_time')), max_time=Decimal(request.POST.get('max_time')), min_tg=Decimal(request.POST.get('min_tg')), max_tg=Decimal(request.POST.get('max_tg')),
-        # min_rh=Decimal(request.POST.get('min_rh')), max_rh=Decimal(request.POST.get('max_rh')), weather=str(request.POST.get('weather')))
-    # return render(request, 'dashboard.html', context)
     return Response({"message": str(request.POST.get('status_type')) + " was updated"})
