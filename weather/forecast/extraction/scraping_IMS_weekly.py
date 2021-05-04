@@ -16,7 +16,8 @@ def scrape_IMS_weekly():
     d = webdriver.Chrome("/usr/bin/chromedriver",chrome_options=chrome_options)
     url = future_forecast_site + zone_ariel
     print(url)
-    print(d.get(url))
+    d.get(url)
+    time.sleep(5)
     text_of_d = d.execute_script("return document.body.innerText;")
     time.sleep(5)
     print(text_of_d)
