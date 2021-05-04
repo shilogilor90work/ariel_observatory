@@ -5,7 +5,7 @@ import json
 import requests
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-
+import time
 
 def scrape_IMS_weekly():
 
@@ -18,6 +18,7 @@ def scrape_IMS_weekly():
     print(url)
     d.get(url)
     text_of_d = d.execute_script("return document.body.innerText;")
+    time.sleep(5)
     print(text_of_d)
     # request
     data= json.loads(text_of_d.encode('utf8'))
