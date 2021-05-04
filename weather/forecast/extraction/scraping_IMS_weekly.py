@@ -1,4 +1,4 @@
-from .IMS_weekly_config import current_forecast_site, zone_ariel, future_forecast_site, whether
+from .IMS_weekly_config import current_forecast_site, zone_ariel, future_forecast_site, whether, API_TOKEN
 from forecast.models import Weekly
 from datetime import datetime
 import json
