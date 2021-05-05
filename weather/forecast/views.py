@@ -27,8 +27,8 @@ def getstatus():
             else:
                 pass
         if flag:
-            return color.status_type
-    return "Green"
+            return color.status_type.lower()
+    return "mos"
 
 # Create your views here.
 def status_view(request):
