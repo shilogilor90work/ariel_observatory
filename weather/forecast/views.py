@@ -28,21 +28,6 @@ def getstatus():
             return color.status_type
     return "Green"
 
-
-
-
-
-
-
-    if rules.exists() and rules.first().status_type == "Manual":
-        return "Manual"
-    if rules.exists():
-        for rule in rules
-    elif max(status_temp)==1:
-        return "yellow"
-    else:
-        return "green"
-
 # Create your views here.
 def status_view(request):
     """Status View
