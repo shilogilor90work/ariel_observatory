@@ -26,11 +26,11 @@ def scrape_IMS_current():
 
     current_item = Current_Weather.objects.filter(current_time=current_time)
     if current_item.exists():
-        current_item.objects.update(Rain=str(name_value['Rain']), WSmax=str(name_value['WSmax']), WDmax=str(name_value['WDmax']), WS=str(name_value['WS']),
-        WD=str(name_value['WD']), STDwd=str(name_value['STDwd']), TD=str(name_value['TD']), TW=str(name_value['TW']), TDmax=str(name_value['TDmax']),
-        TDmin=str(name_value['TDmin']), WS1mm=str(name_value['WS1mm']), WS10mm=str(name_value['Ws10mm']), time=str(name_value['Time']), TG=str(name_value['TG']), RH=str(name_value['RH']))
+        current_item.objects.update(rain=str(name_value['rain']), wsmax=str(name_value['wsmax']), wdmax=str(name_value['wdmax']), ws=str(name_value['ws']),
+        wd=str(name_value['wd']), stdwd=str(name_value['stdwd']), td=str(name_value['td']), tw=str(name_value['tw']), tdmax=str(name_value['tdmax']),
+        tdmin=str(name_value['tdmin']), ws1mm=str(name_value['ws1mm']), ws10mm=str(name_value['ws10mm']), time=str(name_value['time']), tg=str(name_value['tg']), rh=str(name_value['rh']))
     else:
-        Current_Weather.objects.create(current_time=current_time, Rain=str(name_value['Rain']), WSmax=str(name_value['WSmax']), WDmax=str(name_value['WDmax']), WS=str(name_value['WS']),
-        WD=str(name_value['WD']), STDwd=str(name_value['STDwd']), TD=str(name_value['TD']), TW=str(name_value['TW']), TDmax=str(name_value['TDmax']),
-        TDmin=str(name_value['TDmin']), WS1mm=str(name_value['WS1mm']), WS10mm=str(name_value['Ws10mm']), time=str(name_value['Time']), TG=str(name_value['TG']), RH=str(name_value['RH']))
+        Current_Weather.objects.create(current_time=current_time, rain=str(name_value['rain']), wsmax=str(name_value['wsmax']), wdmax=str(name_value['wdmax']), ws=str(name_value['ws']),
+        wd=str(name_value['wd']), stdwd=str(name_value['stdwd']), td=str(name_value['td']), tw=str(name_value['tw']), tdmax=str(name_value['tdmax']),
+        tdmin=str(name_value['tdmin']), ws1mm=str(name_value['ws1mm']), ws10mm=str(name_value['ws10mm']), time=str(name_value['time']), tg=str(name_value['tg']), rh=str(name_value['rh']))
     print(name_value)

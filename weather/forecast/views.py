@@ -15,14 +15,16 @@ def getstatus():
         flag=True
         for field in Rules._meta.get_fields():
             if field.name[0 : 3]=='min' :
-                if(getattr(color,field.name)>getattr(first_current,field.name[4:])):
+                if(str(getattr(color,field.name))>getattr(first_current,field.name[4:])):
                     flag=False
                     break
             elif field.name[0 : 3]=='max':
-                if(getattr(color,field.name)<getattr(first_current,field.name[4:])):
+                if(str(getattr(color,field.name))<getattr(first_current,field.name[4:])):
                     flag=False
                     break
             elif field.name=='weather':
+                pass
+            else:
                 pass
         if flag:
             return color.status_type
