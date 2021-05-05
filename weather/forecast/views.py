@@ -28,7 +28,7 @@ def getstatus():
                 pass
         if flag:
             return color.status_type.lower()
-    return "mos"
+    return "undefind_status"
 
 # Create your views here.
 def status_view(request):
