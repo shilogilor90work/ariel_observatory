@@ -6,10 +6,29 @@ from forecast.models import Weekly, Current_Weather, Rules
 from datetime import datetime
 
 def getstatus():
+    status_temp =[0]
     rules = Rules.objects.all()
-    first_weekly = Weekly.objects.filter(forecast_time__gte=datetime.now()).order_by('forecast_time')
-
-    return "red"
+    first_weekly = Weekly.objects.filter(forecast_time__gte=datetime.now()).order_by('forecast_time').first()
+    first_current = Current_Weather.objects.all().order_by('-current_time').first()
+    #0-red 1-green 2-yellow 3-Manual
+    for color in rules:
+        flag=True
+        for field in Rules._meta.get_fields():
+            if field.name[0 : 3]=='min' :
+                if(getattr(color,field.name)>float(getattr(first_current,field.name[4:]))):
+                    flag=False
+                    break
+            elif field.name[0 : 3]=='max':
+                if(getattr(color,field.name)<float(getattr(first_current,field.name[4:]))):
+                    flag=False
+                    break
+            elif field.name=='weather':
+                pass
+            else:
+                pass
+        if flag:
+            return color.status_type.lower()
+    return "undefind_status"
 
 # Create your views here.
 def status_view(request):
