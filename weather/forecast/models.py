@@ -35,28 +35,28 @@ class Current_Weather(models.Model):
     HELP_CODE = 'needs to change'
     current_time = models.DateTimeField(unique=True, help_text=HELP_forecast)
 
-    Rain = models.CharField(max_length=64, help_text=HELP_CODE)
-    WSmax = models.CharField(max_length=64, help_text=HELP_CODE)
-    WDmax = models.CharField(max_length=64, help_text=HELP_CODE)
-    WS = models.CharField(max_length=64, help_text=HELP_CODE)
-    WD = models.CharField(max_length=64, help_text=HELP_CODE)
-    STDwd = models.CharField(max_length=64, help_text=HELP_CODE)
-    TD = models.CharField(max_length=64, help_text=HELP_CODE)
-    TW = models.CharField(max_length=64, help_text=HELP_CODE)
-    TDmax = models.CharField(max_length=64, help_text=HELP_CODE)
-    TDmin = models.CharField(max_length=64, help_text=HELP_CODE)
-    WS1mm = models.CharField(max_length=64, help_text=HELP_CODE)
-    WS10mm = models.CharField(max_length=64, help_text=HELP_CODE)
+    rain = models.CharField(max_length=64, help_text=HELP_CODE)
+    wsmax = models.CharField(max_length=64, help_text=HELP_CODE)
+    wdmax = models.CharField(max_length=64, help_text=HELP_CODE)
+    ws = models.CharField(max_length=64, help_text=HELP_CODE)
+    wd = models.CharField(max_length=64, help_text=HELP_CODE)
+    stdwd = models.CharField(max_length=64, help_text=HELP_CODE)
+    td = models.CharField(max_length=64, help_text=HELP_CODE)
+    tw = models.CharField(max_length=64, help_text=HELP_CODE)
+    tdmax = models.CharField(max_length=64, help_text=HELP_CODE)
+    tdmin = models.CharField(max_length=64, help_text=HELP_CODE)
+    ws1mm = models.CharField(max_length=64, help_text=HELP_CODE)
+    ws10mm = models.CharField(max_length=64, help_text=HELP_CODE)
     time = models.CharField(max_length=64, help_text=HELP_CODE)
-    TG = models.CharField(max_length=64, help_text=HELP_CODE)
-    RH = models.CharField(max_length=64, help_text=HELP_CODE)
+    tg = models.CharField(max_length=64, help_text=HELP_CODE)
+    rh = models.CharField(max_length=64, help_text=HELP_CODE)
 
 
     def __str__(self):
-        return f"{self.current_time} -- {self.Rain} -- {self.WSmax} -- {self.WDmax} -- \
-            {self.WS} -- {self.WD} -- {self.STDwd} -- {self.TD} -- \
-            {self.TW} -- {self.TDmax} -- {self.TDmin} -- {self.WS1mm} -- \
-            {self.WS10mm} -- {self.time} -- {self.TG} -- {self.RH}"
+        return f"{self.current_time} -- {self.rain} -- {self.wsmax} -- {self.wdmax} -- \
+            {self.ws} -- {self.wd} -- {self.stdwd} -- {self.td} -- \
+            {self.tw} -- {self.tdmax} -- {self.tdmin} -- {self.ws1mm} -- \
+            {self.ws10mm} -- {self.time} -- {self.tg} -- {self.rh}"
 
 
 
