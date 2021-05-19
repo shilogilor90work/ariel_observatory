@@ -3,12 +3,12 @@ from rest_framework.response import Response
 from decimal import Decimal
 from rest_framework.decorators import api_view
 from forecast.models import Weekly, Current_Weather, Rules
-from datetime import datetime
+from django.utils import timezone
 
 def getstatus():
     status_temp =[0]
     rules = Rules.objects.all()
-    first_weekly = Weekly.objects.filter(forecast_time__gte=datetime.now()).order_by('forecast_time').first()
+    first_weekly = Weekly.objects.filter(forecast_time__gte=timezone.now()).order_by('forecast_time').first()
     first_current = Current_Weather.objects.all().order_by('-current_time').first()
     #0-red 1-green 2-yellow 3-Manual
     for color in rules:
