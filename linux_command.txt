@@ -27,5 +27,16 @@ scrape_IMS_weekly()
 
 sudo python3 manage.py runserver 0.0.0.0:80
 
-// from weather:
-sudo mv chromedriver /usr/bin/
+// from ariel_observatory:
+
+cd /tmp/
+sudo wget https://chromedriver.storage.googleapis.com/80.0.3987.106/chromedriver_linux64.zip
+sudo unzip chromedriver_linux64.zip
+sudo mv chromedriver /usr/bin/chromedriver
+chromedriver – version
+
+// linux
+
+sudo curl https://intoli.com/install-google-chrome.sh | bash
+sudo mv /usr/bin/google-chrome-stable /usr/bin/google-chrome
+google-chrome – version && which google-chrome

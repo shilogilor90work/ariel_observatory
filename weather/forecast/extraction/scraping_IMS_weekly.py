@@ -5,6 +5,8 @@ import json
 import requests
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+from webdriver_manager.chrome import ChromeDriverManager
+
 import time
 
 def scrape_IMS_weekly():
@@ -13,7 +15,7 @@ def scrape_IMS_weekly():
     chrome_options.add_argument('--headless')
     chrome_options.add_argument('--no-sandbox')
     chrome_options.add_argument('--disable-dev-shm-usage')
-    d = webdriver.Chrome("/usr/bin/chromedriver",chrome_options=chrome_options)
+    d = webdriver.Chrome(ChromeDriverManager().install(),chrome_options=chrome_options)
     url = future_forecast_site + zone_ariel
     print(url)
     d.get(url)
