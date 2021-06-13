@@ -60,3 +60,8 @@ install chrome
 5)sudo unzip chromedriver_linux64.zip
 6)sudo mv chromedriver /usr/bin/chromedriver
 7)chromedriver --version
+
+sudo curl https://intoli.com/install-google-chrome.sh | bash
+sudo mv /usr/bin/google-chrome-stable /usr/bin/google-chrome
+google-chrome – version && which google-chrome
+pip3 install selenium – user
