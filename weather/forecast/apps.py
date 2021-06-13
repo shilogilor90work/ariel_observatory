@@ -5,7 +5,7 @@ class forecastConfig(AppConfig):
     name = 'forecast'
 
     def ready(self):
-        if 'runserver' not in sys.argv:
+      #  if 'runserver' not in sys.argv:
             return True
 
         # you must import your modules here
