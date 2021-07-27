@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'weather',
     'forecast',
-    'rest_framework',
+   # 'rest_framework',
     'django_celery_beat',
 
 ]
