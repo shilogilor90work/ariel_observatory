@@ -4,9 +4,9 @@ import os
 
 from celery import Celery
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'ariel_observatory.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'weather.settings')
 
-app = Celery('ariel_observatory')
+app = Celery('weather')
 
 app.comfig_from_object('django.conf::settings' ,namespace='CELERY')
 
