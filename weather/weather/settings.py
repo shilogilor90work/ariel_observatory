@@ -39,9 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'weather',
     'forecast',
-   # 'rest_framework',
+    'rest_framework',
     'django_celery_beat',
-    'django_celery',
 ]
 
 MIDDLEWARE = [
@@ -123,3 +122,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
