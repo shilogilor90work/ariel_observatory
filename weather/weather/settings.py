@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'weather',
     'forecast',
     'rest_framework',
-    'django-celery-beat',
+    'django_celery_beat',
 
 ]
 
