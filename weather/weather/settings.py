@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'forecast',
    # 'rest_framework',
     'django_celery_beat',
-
+    'django_celery',
 ]
 
 MIDDLEWARE = [
