@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'weather',
     'forecast',
     'rest_framework',
+    'Django-celery-beat',
+
 ]
 
 MIDDLEWARE = [
