@@ -67,8 +67,9 @@
   <input type="number" id="min_rh" name="min_rh" value={{rule.min_rh}} step=".01">
   <input type="number" id="max_rh" name="max_rh" value={{rule.max_rh}} step=".01"><br><br>
   <label for="fname">weather code:</label>
-
   <input type="number" id="weather" name="weather" value={{rule.weather}}><br><br>
+  <label for="fname">enter password:</label>
+  <input type="text" id="password" name="password" <br><br>
 
     <input type="submit" value="Submit">
   </form>
@@ -82,8 +83,9 @@
 <div id="Manual" class="tabcontent" style="display: none;">
   <form method="POST" >
     <br><br>
-    <h2>For Manual override click Override</h2>
-
+    <h2>For Manual override put the password and click Override</h2>
+    <label for="fname">enter password:</label>
+    <input type="text" id="password" name="password" <br><br>
   <input type="submit" value="Override">
 
   <br><br>
@@ -93,6 +95,8 @@
 
 $('form').on('submit',function(e){
     e.preventDefault();
+    if(data.password=="ariel")
+    {
     $.ajax({
         type     : "POST",
         cache    : false,
@@ -101,7 +105,12 @@ $('form').on('submit',function(e){
         success  : function(data) {
           console.log(data)
         }
+
     });
+  }
+  else {
+      console.log("Wrong password try again")
+  }
 
 });
 document.getElementById("Red").style.display = "None";

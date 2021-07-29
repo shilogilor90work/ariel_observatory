@@ -1,4 +1,4 @@
-from _future import absolute_import, unicode_literals
+from _future_ import absolute_import, unicode_literals
 
 from celery import shared_task
 
