@@ -1,6 +1,6 @@
 # Create your tasks here
 
-from celery.task import periodic_task
+from celery.decorators import periodic_task
 from celery.schedules import crontab
 from .extraction.scraping_IMS_current import scrape_IMS_current
 from .extraction.scraping_IMS_weekly import scrape_IMS_weekly
