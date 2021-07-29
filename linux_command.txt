@@ -72,3 +72,6 @@ kill port 80 spam this till no DIP is alive:
 sudo fuser -k 80/tcp
 
 
+celery:
+# to start beat worker:
+celery -A weather beat -l INFO
