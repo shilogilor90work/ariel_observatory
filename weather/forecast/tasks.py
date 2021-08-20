@@ -5,6 +5,7 @@ from celery.schedules import crontab
 from .extraction.scraping_IMS_current import scrape_IMS_current
 from .extraction.scraping_IMS_weekly import scrape_IMS_weekly
 from .extraction.remove_DB_by_date import delete_old
+from .extraction.remove_config import DAYS_COUNT_BACK
 
 
 
@@ -21,7 +22,7 @@ def weekly_scrape():
     scrape_IMS_weekly()
     print("finished weekly scrape")
 
-@periodic_task(run_every=crontab(minute='0,30'))
+@periodic_task(run_every=crontab(minute='10,40'))
 def delete_old():
     print("starting delete old DB")
     delete_old()
