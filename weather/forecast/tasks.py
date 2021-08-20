@@ -5,7 +5,6 @@ from celery.schedules import crontab
 from .extraction.scraping_IMS_current import scrape_IMS_current
 from .extraction.scraping_IMS_weekly import scrape_IMS_weekly
 from .extraction.remove_DB_by_date import delete_old
-from .extraction.remove_config import DAYS_COUNT_BACK
 
 
 
