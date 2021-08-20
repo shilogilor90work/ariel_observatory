@@ -1,4 +1,4 @@
-from remove_config import DAYS_COUNT_BACK, table_names
+from remove_config import DAYS_COUNT_BACK
 from models import Weekly, Current_Weather
 from datetime import datetime, timedelta
 
