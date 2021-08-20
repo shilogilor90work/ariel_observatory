@@ -44,8 +44,8 @@
 
 <table class="current_weather_info" >
     <tr>
-        <th>current_time</th>
-        <th>Rain</th>
+        <th class="time">current_time</th>
+        <th class="rain">Rain</th>
         <th>WSmax</th>
         <th>WDmax</th>
         <th>WS</th>
@@ -63,8 +63,8 @@
     </tr>
     {% for data in current_weather %}
     <tr>
-        <td class="time">{{ data.current_time }}</td>
-        <td class="rain">{{ data.rain }}</td>
+        <td>{{ data.current_time }}</td>
+        <td>{{ data.rain }}</td>
         <td>{{ data.wsmax }}</td>
         <td>{{ data.wdmax }}</td>
         <td>{{ data.ws }}</td>
