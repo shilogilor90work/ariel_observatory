@@ -22,7 +22,7 @@ def weekly_scrape():
     print("finished weekly scrape")
 
 @periodic_task(run_every=crontab(minute='10,40'))
-def delete_old():
+def del_delete_old():
     print("starting delete old DB")
     delete_old()
     print("finished delete old DB")
