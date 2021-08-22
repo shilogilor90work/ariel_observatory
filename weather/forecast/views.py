@@ -48,7 +48,6 @@ def status_view(request):
     return render(request, 'dashboard.html', context)
 
 def api_view_test(request):
-    status=getstatus()
     current_weather = Current_Weather.objects.first().order_by('-current_time')
     context = {"current_weather": current_weather, "status": status}
     return render(request, 'api.html', context)
