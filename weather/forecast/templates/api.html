@@ -1,30 +1,5 @@
-{% extends "base.html" %}
 
 {% block content %}
-
-<h1>weekly data:</h1>
-<br><br>
-    <!-- {% for data in weekly %}
-        <h1>{{ data.forecast_time }}  -- {{ data.weather_code }}  -- {{ data.temperature }}  -- {{ data.weather }}</h1> <br>
-    {% endfor %} -->
-
-    <table>
-        <tr>
-            <th>forecast_time</th>
-            <th>weather_code</th>
-            <th>temperature</th>
-            <th>weather</th>
-          </tr>
-          {% for data in weekly.reverse %}
-          <tr>
-        <td>{{ data.forecast_time }}</td>
-        <td>{{ data.weather_code }}</td>
-        <td>{{ data.temperature }}</td>
-        <td>{{ data.weather }}</td>
-    </tr>
-    {% endfor %}
-</table>
-    <br><br><br><br>
 
 <h1>    current data:</h1>
 
