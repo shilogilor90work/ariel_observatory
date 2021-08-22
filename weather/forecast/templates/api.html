@@ -1,5 +1,30 @@
 {% extends "base.html" %}
 
+{% block content %}
+
+<h1>weekly data:</h1>
+<br><br>
+    <!-- {% for data in weekly %}
+        <h1>{{ data.forecast_time }}  -- {{ data.weather_code }}  -- {{ data.temperature }}  -- {{ data.weather }}</h1> <br>
+    {% endfor %} -->
+
+    <table>
+        <tr>
+            <th>forecast_time</th>
+            <th>weather_code</th>
+            <th>temperature</th>
+            <th>weather</th>
+          </tr>
+          {% for data in weekly.reverse %}
+          <tr>
+        <td>{{ data.forecast_time }}</td>
+        <td>{{ data.weather_code }}</td>
+        <td>{{ data.temperature }}</td>
+        <td>{{ data.weather }}</td>
+    </tr>
+    {% endfor %}
+</table>
+    <br><br><br><br>
 
 <h1>    current data:</h1>
 
@@ -25,24 +50,25 @@
         <th>TG</th>
         <th>RH</th>
     </tr>
-
+    {% for data in current_weather %}
     <tr>
-        <td>{{ current_weather.current_time[0] }}</td>
-        <td>{{ current_weather.rain }}</td>
-        <td>{{ current_weather.wsmax }}</td>
-        <td>{{ current_weather.wdmax }}</td>
-        <td>{{ current_weather.ws }}</td>
-        <td>{{ current_weather.wd }}</td>
-        <td>{{ current_weather.stdwd }}</td>
-        <td>{{ current_weather.td }}</td>
-        <td>{{ current_weather.tw }}</td>
-        <td>{{ current_weather.tdmax }}</td>
-        <td>{{ current_weather.tdmin }}</td>
-        <td>{{ current_weather.ws1mm }}</td>
-        <td>{{ current_weather.ws10mm }}</td>
-        <td>{{ current_weather.time }}</td>
-        <td>{{ current_weather.tg }}</td>
-        <td>{{ current_weather.rh }}</td>
+        <td>{{ data.current_time }}</td>
+        <td>{{ data.rain }}</td>
+        <td>{{ data.wsmax }}</td>
+        <td>{{ data.wdmax }}</td>
+        <td>{{ data.ws }}</td>
+        <td>{{ data.wd }}</td>
+        <td>{{ data.stdwd }}</td>
+        <td>{{ data.td }}</td>
+        <td>{{ data.tw }}</td>
+        <td>{{ data.tdmax }}</td>
+        <td>{{ data.tdmin }}</td>
+        <td>{{ data.ws1mm }}</td>
+        <td>{{ data.ws10mm }}</td>
+        <td>{{ data.time }}</td>
+        <td>{{ data.tg }}</td>
+        <td>{{ data.rh }}</td>
     </tr>
+    {% endfor %}
 </table>
 {% endblock content %}
