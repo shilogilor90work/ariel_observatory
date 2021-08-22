@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+
+<h1>    current data:</h1>
+
+
+
+
+<table>
+    <tr>
+        <th>current_time</th>
+        <th>Rain</th>
+        <th>WSmax</th>
+        <th>WDmax</th>
+        <th>WS</th>
+        <th>WD</th>
+        <th>STDwd</th>
+        <th>TD</th>
+        <th>TW</th>
+        <th>TDmax</th>
+        <th>TDmin</th>
+        <th>WS1mm</th>
+        <th>WS10mm</th>
+        <th>time</th>
+        <th>TG</th>
+        <th>RH</th>
+    </tr>
+
+    <tr>
+        <td>{{ current_weather.current_time[0] }}</td>
+        <td>{{ current_weather.rain }}</td>
+        <td>{{ current_weather.wsmax }}</td>
+        <td>{{ current_weather.wdmax }}</td>
+        <td>{{ current_weather.ws }}</td>
+        <td>{{ current_weather.wd }}</td>
+        <td>{{ current_weather.stdwd }}</td>
+        <td>{{ current_weather.td }}</td>
+        <td>{{ current_weather.tw }}</td>
+        <td>{{ current_weather.tdmax }}</td>
+        <td>{{ current_weather.tdmin }}</td>
+        <td>{{ current_weather.ws1mm }}</td>
+        <td>{{ current_weather.ws10mm }}</td>
+        <td>{{ current_weather.time }}</td>
+        <td>{{ current_weather.tg }}</td>
+        <td>{{ current_weather.rh }}</td>
+    </tr>
+</table>
+{% endblock content %}
