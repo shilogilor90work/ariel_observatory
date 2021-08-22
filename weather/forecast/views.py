@@ -52,7 +52,7 @@ def api_view_test(request):
     weekly = Weekly.objects.all().order_by('-forecast_time')
     current_weather = Current_Weather.objects.first().order_by('-current_time')
     context = {"weekly": weekly, "current_weather": current_weather, "status": status}
-    return render(request, 'dashboard.html', context)
+    return render(request, 'api.html', context)
 
 def rules_view(request):
     """Rules View
