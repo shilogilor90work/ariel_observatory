@@ -4,7 +4,6 @@ from decimal import Decimal
 from rest_framework.decorators import api_view
 from forecast.models import Weekly, Current_Weather, Rules
 from django.utils import timezone
-from django.http import JsonResponse
 
 def getstatus():
     status_temp =[0]
@@ -75,9 +74,8 @@ def api_current(request):
     """
     first_current = Current_Weather.objects.all().order_by('-current_time').first()
     status=getstatus()
-    temp = first_current.__dict__
-    temp['status'] = status
-    return Response(JsonResponse(temp))
+    first_current["_state"] = ""
+    return Response({'status': status, 'current': first_current})
 
 
 
