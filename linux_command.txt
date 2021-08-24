@@ -82,6 +82,8 @@ screen -S beat
     # to start beat:
     celery -A weather beat
 
+
+
 screen commands:
 
     screen -S firsttry.   # create screen
