@@ -47,6 +47,35 @@ def status_view(request):
     context = {"weekly": weekly, "current_weather": current_weather, "status": status}
     return render(request, 'dashboard.html', context)
 
+def api_status(request):
+    """Status api_status
+    Returns a Response with online status.
+
+    Arguments:
+        request {Requset} -- Request object.
+
+    Returns:
+        Render -- Render object.
+    """
+    status=getstatus()
+    return Response({'status': status})
+
+def api_current(request):
+    """Status api_status
+    Returns a Response with online status.
+
+    Arguments:
+        request {Requset} -- Request object.
+
+    Returns:
+        Render -- Render object.
+    """
+    first_current = Current_Weather.objects.all().order_by('-current_time').first()
+    status=getstatus()
+    return Response({'status': status, 'current': first_current})
+
+
+
 
 def rules_view(request):
     """Rules View

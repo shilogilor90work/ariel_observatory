@@ -74,7 +74,8 @@ sudo fuser -k 80/tcp
 
 celery:
 do each in new screen: 
-
+screen -S celery
+screen -S beat
     # to start worker:
     celery -A weather worker
     
