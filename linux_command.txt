@@ -81,3 +81,11 @@ screen -S beat
     
     # to start beat:
     celery -A weather beat
+
+screen commands:
+
+    screen -S firsttry.   # create screen
+    ctrl+a   d  	     # leave screen
+    screen -r firsttry    # return to screen
+
+    exit       from within the screen
