@@ -74,7 +74,7 @@ def api_current(request):
     """
     first_current = Current_Weather.objects.all().order_by('-current_time').first()
     status=getstatus()
-    return Response({'status': status, 'current': first_current})
+    return Response({'status': status, 'current': first_current.__dict__})
 
 
 
