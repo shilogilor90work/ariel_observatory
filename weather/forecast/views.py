@@ -74,8 +74,13 @@ def api_current(request):
     """
     first_current = Current_Weather.objects.all().order_by('-current_time').first()
     status=getstatus()
-    first_current["_state"] = ""
-    return Response({'status': status, 'current': first_current})
+    response = {
+        "status": status, "current_time" : first_current["current_time"].strftime("%m/%d/%Y, %H:%M:%S"), "rain_chance": first_current["rain"], 
+        "wsmax": first_current["wsmax"], "wdmax": first_current["wdmax"], "ws": first_current["ws"], "wd": first_current["wd"],
+        "stdwd": first_current["stdwd"], "td": first_current["td"], "tw": first_current["tw"], "tdmax": first_current["tdmax"],
+        "tdmin": first_current["tdmin"], "ws1mm": first_current["ws1mm"], "ws10mm": first_current["ws10mm"], "time": first_current["time"],
+        "tg": first_current["tg"], "rh": first_current["rh"]}
+    return Response(response)
 
 
 
