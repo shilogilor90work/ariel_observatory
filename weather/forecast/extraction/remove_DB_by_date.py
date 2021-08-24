@@ -1,5 +1,5 @@
 from .remove_config import DAYS_COUNT_BACK
-from models import Weekly, Current_Weather
+from forecast.models import Weekly, Current_Weather
 from datetime import datetime, timedelta
 
 
