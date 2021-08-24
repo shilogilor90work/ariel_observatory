@@ -47,6 +47,7 @@ def status_view(request):
     context = {"weekly": weekly, "current_weather": current_weather, "status": status}
     return render(request, 'dashboard.html', context)
 
+@api_view(('GET',))
 def api_status(request):
     """Status api_status
     Returns a Response with online status.
@@ -60,6 +61,7 @@ def api_status(request):
     status=getstatus()
     return Response({'status': status})
 
+@api_view(('GET',))
 def api_current(request):
     """Status api_status
     Returns a Response with online status.
