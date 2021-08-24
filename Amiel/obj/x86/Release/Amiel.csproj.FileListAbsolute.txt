@@ -1,0 +1,6 @@
+h:\testAmiel\Amiel\bin\x86\Release\Amiel.dll
+h:\testAmiel\Amiel\bin\x86\Release\Amiel.pdb
+h:\testAmiel\Amiel\obj\x86\Release\Amiel.csproj.AssemblyReference.cache
+h:\testAmiel\Amiel\obj\x86\Release\Amiel.csproj.CoreCompileInputs.cache
+h:\testAmiel\Amiel\obj\x86\Release\Amiel.dll
+h:\testAmiel\Amiel\obj\x86\Release\Amiel.pdb
