@@ -10,7 +10,7 @@ namespace Amiel
     {
         public Observatory()
         {
-            bool safe_or_not = false;
+            bool safe_or_not = safe();
         }
 
         public bool safe()
@@ -27,16 +27,14 @@ namespace Amiel
             {
                 var result = streamReader.ReadToEnd();
                 //if status is safe or not
-
-                
                 if (result.IndexOf("green") != -1)
                 {
-                    // status is safe to operite
+                    // status is safe to operate
                     safe_or_not = true;
                 }
                 else
-                {
-                    // status is not safe to operite
+                
+                    // status is not safe to operate
                     safe_or_not = false;
                 }
             }
