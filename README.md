@@ -23,6 +23,7 @@ By Shilo gilor & Amiel Liberman
 ### Open AWS account for free
 
 A link of step by step how to make a AWS account:
+
 https://www.youtube.com/watch?v=gA9pl-A9gDM
 
 ### Make a ubuntu server
