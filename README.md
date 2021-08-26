@@ -105,3 +105,8 @@ This will take some time with some installing
 
 12) pip3 install django-celery
 
+### Git clone
+
+To copy the git to the server copy paste this code:
+
+git clone https://github.com/shilogilor90work/ariel_observatory.git
