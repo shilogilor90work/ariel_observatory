@@ -16,7 +16,7 @@ By Shilo gilor & Amiel Liberman
 
 5) Git clone 
 
-6) common commands
+6) Common commands
 
 7) Q&A
 
@@ -110,3 +110,78 @@ This will take some time with some installing
 To copy the git to the server copy paste this code:
 
 git clone https://github.com/shilogilor90work/ariel_observatory.git
+
+
+###  Common commands
+
+Where is the app is running and where you need to run it:
+
+cd ariel_observatory/weather
+
+To run the server :
+
+sudo python3 manage.py runserver 0.0.0.0:80
+
+When you run the server and you get a message to makemigrations do the code here:
+
+1) python3 manage.py makemigrations
+
+2) python3 manage.py migrate
+
+Try code in python on the server :
+
+python3 manage.py shell
+
+You can manualy make a update to the data base and scrpe with this code when in shell.
+
+Update currnet manualy:
+
+from forecast.extraction.scraping_IMS_current import scrape_IMS_current
+
+scrape_IMS_current()
+
+Update weekly manualy:
+
+from forecast.extraction.scraping_IMS_weekly import scrape_IMS_weekly
+
+scrape_IMS_weekly()
+
+
+### Q&A
+
+Q) Where is the HTML files?
+
+A) The HTML files are in -> ariel_observatory/weather/forecast/templates
+
+Q) What is the purpse of each HTML? 
+
+A) There 3 HTML files: 
+
+base.html  Is the templets of the HTML files
+
+dashboard.html Is to show of the data base 
+
+rules.html Is the rule base to show current status
+
+Q) Where is the CSS/js
+
+A) The CSS/js files are in ->ariel_observatory/weather/forecast/static
+
+Q) What is status green/yellow/red?
+
+A) Status is how safe is the weather we made 3 defaults status:
+
+Green is sfae
+
+Yellow is the middle from safe to not safe 
+
+Red is not safe
+
+Q) Where is the scraping code store?
+
+A) the scrape code is here -> ariel_observatory/weather/forecast/extraction
+
+Q) what are the config file for?
+
+A) the config file are for editing the basic info like API/what site to scrape/and more
+
