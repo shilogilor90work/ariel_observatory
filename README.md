@@ -189,7 +189,7 @@ Q) What is status green/yellow/red?
 
 A) Status is how safe is the weather we made 3 defaults status:
 
-Green is sfae
+Green is safe
 
 Yellow is the middle from safe to not safe 
 
@@ -203,3 +203,26 @@ Q) what are the config file for?
 
 A) the config file are for editing the basic info like API/what site to scrape/and more
 
+Q) How to add more paths to use in the site?
+
+A) You can more path here ->ariel_observatory/weather/forecast/urls.py
+
+Q) How to edit the time of the automatic scraping?
+
+A) You can edit them in this file -> ariel_observatory/weather/forecast/tasks.py
+
+Q) Can i more automatic runs there?
+
+A) Yes
+
+Q) Can i scrape other sites that are not ariel?
+
+A) YES 
+
+All you need to do is to change in the config.py files the  "zone_ariel" = the site you want
+
+1) You can see what site here https://ims.gov.il/he/Stations
+
+2) Then press the info inside
+
+3) Look for station number 
