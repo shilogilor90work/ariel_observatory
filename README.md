@@ -132,6 +132,16 @@ Try code in python on the server :
 
 python3 manage.py shell
 
+when you fisrt time using the server you will need to create red/green/yellow in the shell:
+
+1) from forecast.models import Rules
+
+2) Rules.objects.create(status_type="Red")
+
+3) Rules.objects.create(status_type="Yellow")
+
+4) Rules.objects.create(status_type="Green")
+
 You can manualy make a update to the data base and scrpe with this code when in shell.
 
 Update currnet manualy:
@@ -145,6 +155,14 @@ Update weekly manualy:
 from forecast.extraction.scraping_IMS_weekly import scrape_IMS_weekly
 
 scrape_IMS_weekly()
+
+If you try to run the serever and server say port is not available.
+
+To kill port 80 spam this till no DIP is alive:
+
+sudo fuser -k 80/tcp
+
+Now try to run server again is will work
 
 
 ### Q&A
