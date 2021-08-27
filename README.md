@@ -162,7 +162,7 @@ To kill port 80 spam this till no DIP is alive:
 
 sudo fuser -k 80/tcp
 
-Now try to run server again is will work
+Now try to run server again it will work
 
 
 ### Q&A
