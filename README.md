@@ -156,6 +156,27 @@ from forecast.extraction.scraping_IMS_weekly import scrape_IMS_weekly
 
 scrape_IMS_weekly()
 
+To have automatic updates of the weather you can use celery:
+
+To start worker:
+
+1) screen -S celery
+2)    celery -A weather worker
+
+To start beat:
+    
+ 1) screen -S beat
+
+ 2)   celery -A weather beat
+
+screen commands:
+
+    screen -S firsttry.   # create screen
+    ctrl+a   d  	     # leave screen
+    screen -r firsttry    # return to screen
+
+    exit       from within the screen
+
 If you try to run the serever and server say port is not available.
 
 To kill port 80 spam this till no DIP is alive:
