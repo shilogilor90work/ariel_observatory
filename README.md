@@ -247,3 +247,9 @@ All you need to do is to change in the config.py files the  "zone_ariel" = the s
 2) Then press the info inside
 
 3) Look for station number 
+
+Q) Is the IP i will have is like the IP you have(18.222.50.25)?
+
+A) No
+
+You will need to edit the files IP but the rest stay the same
