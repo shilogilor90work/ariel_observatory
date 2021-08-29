@@ -2,13 +2,13 @@
 
 Final project in ariel university
 
-By Shilo gilor & Amiel Liberman
+By Shilo Gilor & Amiel Liberman
 
 ## How to use this git?
 
 1) Open AWS account for free
 
-2) Make a ubuntu server
+2) Make an ubuntu server
 
 3) How to connect to a ubuntu server on AWS
 
