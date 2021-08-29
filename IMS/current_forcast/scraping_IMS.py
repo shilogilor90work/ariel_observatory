@@ -32,7 +32,7 @@ mycursor = mydb.cursor()
 
 sql = "INSERT INTO weather (datetime, Rain, WSmax, WDmax, WS, WD, STDwd, TD, TW, TDmax, TDmin, WS1mm, Ws10mm, Time, TG, RH) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
 
-val = (str(name_value['datetime']), str(name_value['Rain']), str(name_value['WSmax']), str(name_value['WDmax']), str(name_value['WS']), str(name_value['WD']), str(name_value['STDwd']), str(name_value['TD']), str(name_value['TW']), str(name_value['TDmax']), str(name_value['TDmin']), str(name_value['WS1mm']), str(name_value['Ws10mm']), str(name_value['Time']), str(name_value['TG']), str(name_value['RH']))
+val = (str(name_value['datetime']), str(name_value.get('Rain','')), str(name_value.get('WSmax','')), str(name_value.get('WDmax','')), str(name_value.get('WS','')), str(name_value.get('WD','')), str(name_value.get('STDwd','')), str(name_value.get('TD','')), str(name_value.get('TW','')), str(name_value.get('TDmax','')), str(name_value.get('TDmin','')), str(name_value.get('WS1mm','')), str(name_value.get('Ws10mm','')), str(name_value.get('Time','')), str(name_value.get('TG','')), str(name_value.get('RH','')))
 mycursor.execute(sql, val)
 
 mydb.commit()
